@@ -1,0 +1,99 @@
+
+11월 05, 2024 09:36:24.533 NEW SESSION
+11월 05, 2024 09:36:24.533 [16244:480:1105/093624.531:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 05, 2024 09:36:24.534 [16244:480:1105/093624.531:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 05, 2024 09:36:27.787 Created TensorFlow Lite XNNPACK delegate for CPU.
+
+11월 06, 2024 09:47:51.948 NEW SESSION
+11월 06, 2024 09:47:51.948 [19280:5068:1106/094751.946:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 06, 2024 09:47:51.948 [19280:5068:1106/094751.946:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 06, 2024 09:47:54.581 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 06, 2024 10:01:04.448 [12868:4984:1106/100104.448:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 06, 2024 10:01:04.448 [12868:4984:1106/100104.448:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 06, 2024 10:01:07.134 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 06, 2024 10:34:01.26 [16240:16916:1106/103401.025:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 06, 2024 10:34:01.26 [16240:16916:1106/103401.025:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 06, 2024 10:34:03.674 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 06, 2024 11:06:04.892 [18700:13324:1106/110604.892:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 06, 2024 11:06:04.892 [18700:13324:1106/110604.892:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 06, 2024 11:06:07.518 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 06, 2024 11:42:01.868 [18700:13324:1106/114201.868:ERROR:interface_endpoint_client.cc(725)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 06, 2024 12:05:58.29 [18700:13324:1106/120558.029:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98356)
+11월 06, 2024 12:05:58.30     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:191793
+11월 06, 2024 12:05:58.30     at new oi (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:192189)
+11월 06, 2024 12:05:58.30     at oi.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:192311)
+11월 06, 2024 12:05:58.30     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 06, 2024 12:05:58.30     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17314)
+11월 06, 2024 12:05:58.30     at #x (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17109)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 06, 2024 12:11:39.619 [18700:13324:1106/121139.619:ERROR:interface_endpoint_client.cc(725)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 06, 2024 12:29:11.463 [18700:13324:1106/122911.462:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 06, 2024 12:29:11.463 [18700:13324:1106/122911.462:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 06, 2024 14:59:20.91 [18700:13324:1106/145920.091:ERROR:device_event_log_impl.cc(201)] [14:59:20.091] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+
+11월 11, 2024 15:02:21.660 NEW SESSION
+11월 11, 2024 15:02:21.660 [840:2680:1111/150221.658:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 11, 2024 15:02:21.661 [840:2680:1111/150221.658:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 11, 2024 15:02:27.84 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 11, 2024 15:14:54.289 [840:2680:1111/151454.288:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98356)
+11월 11, 2024 15:14:54.289     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:191793
+11월 11, 2024 15:14:54.289     at new oi (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:192189)
+11월 11, 2024 15:14:54.289     at oi.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:192311)
+11월 11, 2024 15:14:54.289     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 11, 2024 15:14:54.289     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17314)
+11월 11, 2024 15:14:54.289     at #x (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17109)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 11, 2024 16:03:03.132 [840:2680:1111/160303.132:ERROR:interface_endpoint_client.cc(725)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 11, 2024 16:54:40.795 [840:2680:1111/165440.795:ERROR:CONSOLE(1)] "Request Network.loadNetworkResource failed. {"code":-32602,"message":"Unsupported URL scheme"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+11월 11, 2024 17:38:11.800 [840:2680:1111/173811.800:ERROR:CONSOLE(1)] "Unknown VE context: -moz-box-sizing    at a (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:64099)
+11월 11, 2024 17:38:11.800     at e.Me (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:81107)
+11월 11, 2024 17:38:11.800     at devtools://devtools/bundled/devtools-frontend/front_end/ui/components/render_coordinator/render_coordinator.js:1:150", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 11, 2024 17:38:11.800 [840:2680:1111/173811.800:ERROR:CONSOLE(1)] "Unknown VE context: -ms-text-size-adjust    at a (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:64099)
+11월 11, 2024 17:38:11.801     at e.Me (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:81107)
+11월 11, 2024 17:38:11.801     at devtools://devtools/bundled/devtools-frontend/front_end/ui/components/render_coordinator/render_coordinator.js:1:150", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 11, 2024 17:39:43.248 [840:2680:1111/173943.248:ERROR:CONSOLE(1)] "Unknown VE context: -webkit-overflow-scrolling    at a (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:64099)
+11월 11, 2024 17:39:43.248     at e.Me (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:81107)
+11월 11, 2024 17:39:43.248     at devtools://devtools/bundled/devtools-frontend/front_end/ui/components/render_coordinator/render_coordinator.js:1:150", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+
+11월 15, 2024 09:34:51.568 NEW SESSION
+11월 15, 2024 09:34:51.568 [6224:14788:1115/093451.564:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 15, 2024 09:34:51.571 [6224:14788:1115/093451.564:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 15, 2024 09:34:54.620 [6224:8828:1115/093454.619:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 15, 2024 09:34:54.736 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 15, 2024 09:35:24.474 [6224:8828:1115/093524.474:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 15, 2024 09:36:21.482 [6224:8828:1115/093621.482:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 15, 2024 09:37:53.572 [6224:8828:1115/093753.572:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 15, 2024 09:38:10.515 [6224:14788:1115/093810.514:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 15, 2024 09:38:10.515     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 15, 2024 09:38:10.515     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 15, 2024 09:38:10.515     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 15, 2024 09:38:10.515     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 15, 2024 09:38:10.515     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 15, 2024 09:38:10.515     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 15, 2024 09:40:37.383 [6224:8828:1115/094037.382:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 15, 2024 09:46:58.221 [6224:8828:1115/094658.220:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 15, 2024 09:53:42.531 [6224:14788:1115/095342.531:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 15, 2024 09:53:42.531     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 15, 2024 09:53:42.531     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 15, 2024 09:53:42.531     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 15, 2024 09:53:42.532     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 15, 2024 09:53:42.532     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 15, 2024 09:53:42.532     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 15, 2024 10:33:48.449 [6224:14788:1115/103348.449:ERROR:interface_endpoint_client.cc(725)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 15, 2024 10:58:05.365 [6224:14788:1115/105805.365:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 15, 2024 10:58:05.366     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 15, 2024 10:58:05.366     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 15, 2024 10:58:05.366     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 15, 2024 10:58:05.366     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 15, 2024 10:58:05.366     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 15, 2024 10:58:05.366     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 15, 2024 10:58:09.160 [6224:14788:1115/105809.160:ERROR:CONSOLE(1)] "Unknown VE context: -moz-osx-font-smoothing    at a (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:66546)
+11월 15, 2024 10:58:09.160     at e.Me (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:83574)
+11월 15, 2024 10:58:09.160     at devtools://devtools/bundled/devtools-frontend/front_end/ui/components/render_coordinator/render_coordinator.js:1:150", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 15, 2024 12:02:58.412 [6224:14788:1115/120258.412:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 15, 2024 12:02:58.413     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 15, 2024 12:02:58.413     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 15, 2024 12:02:58.413     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 15, 2024 12:02:58.413     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 15, 2024 12:02:58.413     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 15, 2024 12:02:58.413     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 15, 2024 12:21:32.664 [6224:14788:1115/122132.664:ERROR:interface_endpoint_client.cc(725)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 15, 2024 12:28:44.48 [6224:14788:1115/122844.048:ERROR:device_event_log_impl.cc(201)] [12:28:44.049] Bluetooth: bluetooth_adapter_winrt.cc:1054 Getting Default Adapter failed.
