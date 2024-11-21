@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
   
 <%@ include file="../includes/header.jsp" %>
 
@@ -20,19 +21,32 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="form-group">
-                	<label>Bno</label><input class="form-control" name="bno" value="${board.bno}" readonly="readonly">
+                	<label>Bno</label>
+                	<input class="form-control" name="bno" value="${board.bno}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                	<label>Title</label><input class="form-control" name="title" value="${board.title}" readonly="readonly">
+                	<label>Title</label>
+                	<input class="form-control" name="title" value="${board.title}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                	<label>Text area</label><textarea rows="3" class="form-control" name="content" readonly>
-                	<c:out value="${board.content}"></c:out></textarea>
+                	<label>Text area</label>
+                	<textarea rows="3" class="form-control" name="content" readonly="readonly">
+                	<c:out value="${board.content}" /></textarea>
                 </div>
                 <div class="form-group">
                 	<label>Writer</label><input class="form-control" name="writer" value="${board.writer}" readonly="readonly">
                 </div>
-                <button data-oper="modify" class="btn btn-default">Modify</button>
+               
+               <!--  -->
+                <sec:authentication property="principal" var="pinfo" />
+                	<sec:authorize access="isAuthenticated()">
+                		<!-- 작성자와 로그인한 사용자가 같으면,,, 수정버튼 표시할거임 -->
+                		<c:if test="${pinfo.username eq board.writer}">
+                			<button data-oper="modify" class="btn btn-default">Modify</button>
+                		</c:if>
+                	</sec:authorize>
+               
+               
                 <button data-oper="list" class="btn btn-info">List</button>
                 
                 <form id="operForm" action="/board/modify" method="get">
@@ -58,9 +72,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">
             	<i class="fa fa-comments fa-fw"></i> Reply
-            	<button id='addReplyBtn' class="btn btn-primary btn-xs pull-right">
-            		New Reply
-            	</button>
+            	
+            	<!-- 사용자가 로그인되어 있는지 확인하는 조건 -->
+            	<sec:authorize access="isAuthenticated()">
+	            	<button id='addReplyBtn' class="btn btn-primary btn-xs pull-right">
+	            		New Reply
+	            	</button>
+            	</sec:authorize>
+            	
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -176,9 +195,19 @@
 		let modalRemoveBtn = $("#modalRemoveBtn");
 		let modalRegisterBtn = $("#modalRegisterBtn");
 		
+		let replyer = null;
+		
+		/* 로그인 한 사용자면,, replyer 변수를 해당유저 id로 지정 */
+		<sec:authorize access="isAuthenticated()">
+			replyer = '<sec:authentication property="principal.username" />';
+		</sec:authorize>
+		
+		
 		//new reply 팝업
 		$("#addReplyBtn").on("click", function(){
 			modal.find("input").val("");
+			modal.find("input[name='replyer']").val(replyer);
+			modal.find("input[name='replyer']").prop("readonly", true);
 			modalInputReplyDate.closest("div").hide();
 			modal.find("button[id != 'modalCloseBtn']").hide();
 			

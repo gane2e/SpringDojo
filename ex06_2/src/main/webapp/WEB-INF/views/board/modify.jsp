@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
   
 <%@ include file="../includes/header.jsp" %>
 
@@ -38,8 +39,19 @@
 	                <div class="form-group">
 	                	<label>Writer</label><input class="form-control" name="writer" value="${board.writer}" readonly="readonly">
 	                </div>
-	                <button type="submit" data-oper="modify" class="btn btn-default">Modify</button>
-	                <button type="submit" data-oper="remove" class="btn btn-danger">Remove</button>
+	                
+	                <!-- 로그인O, 작성자만 수정 삭제 가능 -->
+	                <!-- 주소를 직접 입력해서 들어옴을 방지하기 위해,, 조건 체크가 필요함 -->
+	                <sec:authentication property="principal" var="pinfo" />
+	                <sec:authorize access="isAuthenticated()">
+	                	<c:if test="${pinfo.username eq board.writer}">
+			                <button type="submit" data-oper="modify" class="btn btn-default">Modify</button>
+			                <button type="submit" data-oper="remove" class="btn btn-danger">Remove</button>
+	                	</c:if>
+	                </sec:authorize>
+	                
+	                
+	                
 	                <button type="submit" data-oper="list" class="btn btn-info">List</button>
                 </form>
             </div>
