@@ -18,7 +18,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler{@Override
 			AccessDeniedException accessDeniedException) throws IOException, ServletException {
 	
 	log.error("Access Denied handler");
-	log.error("Redirect..........");
+	log.error("view권한이 없어서 Redirect 요청중입니다..........");
 	response.sendRedirect("/accessError");
 		
 	}

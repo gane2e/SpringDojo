@@ -5,8 +5,11 @@
   
 <mapper namespace="org.zerock.mapper.MemberMapper">
 	
+	<!-- 조인구간 start -->
 	<resultMap type="org.zerock.domain.MemberVO" id="memberMap">
+	
 		<id property="userid" column="userid"/>
+		
 		<result property="userid" column="userid"/>
 		<result property="userpw" column="userpw"/>
 		<result property="userName" column="userName"/>
@@ -14,15 +17,18 @@
 		<result property="updataDate" column="updataDate"/>
 		<result property="enabled" column="enabled"/>
 		
+		<!-- 1:N 관계 -->
 		<collection property="authList" resultMap="authMap"></collection>
 	
 	</resultMap>
+	<!-- 조인구간 end -->
 	
 	<resultMap type="org.zerock.domain.AuthVO" id="authMap">
 		<result property="userid" column="userid"/>
 		<result property="auth" column="auth"/>
 	</resultMap>
 	
+	<!-- memberMap 실행(memberMap 안의 authList 포함) -->
 	<select id="read" resultMap="memberMap">
 		SELECT
 			m.userid, userpw, username, enabled, regdate, updatedate, a.auth

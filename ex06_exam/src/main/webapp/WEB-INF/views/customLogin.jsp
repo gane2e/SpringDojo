@@ -14,11 +14,17 @@
 	
 	<form action="login" method="post">
 		<div>
-			<input type="text" name="username" value="admin" />
+			<input type="text" name="username"/>
 		</div>
 		<div>
-			<input type="password" name="password" value="1234" />
+			<input type="password" name="password"/>
 		</div>
+		
+		<!-- 자동 로그인하기 -->
+		<div>
+			<input type="checkbox" name="remember-me"> Remember me
+		</div>
+		
 		<div>
 			<input type="submit" value="로그인" />
 		</div>

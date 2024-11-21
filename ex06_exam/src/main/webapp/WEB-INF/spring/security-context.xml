@@ -9,6 +9,8 @@
 	<bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
 	<!-- <bean id="customPasswordEncoder" class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> -->
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="customUserDetailsService" class="org.zerock.security.CustomUserDetailsService"></bean>
+	 
 	 
 	
 	<security:http>
@@ -24,7 +26,7 @@
 	
 		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
 		
-		<security:logout logout-url="/customLogouts" invalidate-session="true"/>
+		
 		
 		
 		<!-- CSRF공격방지 / 아래방법 또는 jsp파일에서 토큰(인풋에 히든값으로) 전송함 -->
@@ -36,14 +38,18 @@
 		<!-- 403이뜨면 ,, 핸들러가 동작함 / customAccessDenied 빈 객체 찾아서 / 리다이렉트 요청함-->
 		<security:access-denied-handler ref="customAccessDenied" />
 		
+		<!-- 자동로그인 설정, token시간  -->
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
+		
+		<security:logout logout-url="/customLogouts" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID" />
+		
 	</security:http>
 	
 	<!-- 인증 총괄 -->
 	<security:authentication-manager>
 		<!-- 구현체 -->
-		<security:authentication-provider>
+		<security:authentication-provider user-service-ref="customUserDetailsService">
 		
-			<security:jdbc-user-service data-source-ref="dataSource"/>
 			<security:password-encoder ref="bcryptPasswordEncoder"/>
 			
 		</security:authentication-provider>
