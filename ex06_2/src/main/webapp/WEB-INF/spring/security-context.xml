@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.8.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="customAccessDenied" class="org.zerock.security.CustomAccessDeniedHandler"></bean>
+	<bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
+	<!-- <bean id="customPasswordEncoder" class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="customUserDetailsService" class="org.zerock.security.CustomUserDetailsService"></bean>
+	 
+	 
+	
+	<security:http>
+	
+		<!-- pattern="/sample/all" 경로는 access="permitAll" 누구나 접근 가능하다.-->
+		<security:intercept-url pattern="/sample/all" access="permitAll"/>
+		
+		<!-- pattern="/sample/member" 경로는 access="hasRole('ROLE_MEMBER') 멤버 권한만 접근 가능하다.-->
+		<security:intercept-url pattern="/sample/member" access="hasRole('ROLE_MEMBER')"/>
+		
+		<!-- pattern="/sample/admin" 경로는 access="hasRole('ROLE_ADMIN') 멤버 권한만 접근 가능하다.-->
+		<security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')"/>
+	
+		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
+		
+		
+		
+		
+		<!-- CSRF공격방지 / 아래방법 또는 jsp파일에서 토큰(인풋에 히든값으로) 전송함 -->
+		<security:csrf disabled="true"/>
+		
+		<!-- 403이뜨면 ,, 에러페이지 경로를 "/accessError" 로 호출하라고 포워딩함 -->
+		<!-- <security:access-denied-handler error-page="/accessError"/> -->
+		
+		<!-- 403이뜨면 ,, 핸들러가 동작함 / customAccessDenied 빈 객체 찾아서 / 리다이렉트 요청함-->
+		<security:access-denied-handler ref="customAccessDenied" />
+		
+		<!-- 자동로그인 설정, token시간  -->
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
+		
+		<security:logout logout-url="/customLogouts" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID" />
+		
+	</security:http>
+	
+	<!-- 인증 총괄 -->
+	<security:authentication-manager>
+		<!-- 구현체 -->
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+		
+			<security:password-encoder ref="bcryptPasswordEncoder"/>
+			
+		</security:authentication-provider>
+		
+	</security:authentication-manager>
+		
+</beans>
