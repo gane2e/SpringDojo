@@ -97,3 +97,106 @@
 11월 15, 2024 12:02:58.413     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
 11월 15, 2024 12:21:32.664 [6224:14788:1115/122132.664:ERROR:interface_endpoint_client.cc(725)] Message 0 rejected by interface blink.mojom.WidgetHost
 11월 15, 2024 12:28:44.48 [6224:14788:1115/122844.048:ERROR:device_event_log_impl.cc(201)] [12:28:44.049] Bluetooth: bluetooth_adapter_winrt.cc:1054 Getting Default Adapter failed.
+
+11월 19, 2024 15:19:10.356 NEW SESSION
+11월 19, 2024 15:19:10.356 [8328:8276:1119/151910.354:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 19, 2024 15:19:10.356 [8328:8276:1119/151910.354:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 19, 2024 15:19:12.631 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 19, 2024 15:19:12.739 [8328:5952:1119/151912.739:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 19, 2024 15:19:38.256 [8328:5952:1119/151938.256:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 19, 2024 15:20:38.177 [8328:5952:1119/152038.177:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 19, 2024 15:22:28.94 [8328:5952:1119/152228.094:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 19, 2024 15:25:12.932 [8328:5952:1119/152512.932:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 19, 2024 15:30:52.437 [8328:5952:1119/153052.437:ERROR:registration_request.cc(291)] Registration response error message: INTERNAL_SERVER_ERROR
+11월 19, 2024 16:33:25.749 [8328:8276:1119/163325.749:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 19, 2024 16:33:25.749     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 19, 2024 16:33:25.749     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 19, 2024 16:33:25.750     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 19, 2024 16:33:25.750     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 19, 2024 16:33:25.750     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 19, 2024 16:33:25.750     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 19, 2024 17:00:41.401 [8328:8276:1119/170041.401:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 19, 2024 17:00:41.401     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 19, 2024 17:00:41.401     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 19, 2024 17:00:41.401     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 19, 2024 17:00:41.401     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 19, 2024 17:00:41.401     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 19, 2024 17:00:41.402     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+
+11월 20, 2024 11:53:57.293 NEW SESSION
+11월 20, 2024 11:53:57.293 [15248:1664:1120/115357.292:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 20, 2024 11:53:57.294 [15248:1664:1120/115357.292:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 20, 2024 11:53:59.606 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 20, 2024 11:53:59.806 [15248:7856:1120/115359.806:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 11:54:22.131 [15248:7856:1120/115422.131:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 11:55:19.642 [15248:7856:1120/115519.642:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 11:57:17.797 [15248:7856:1120/115717.797:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 12:01:05.522 [15248:7856:1120/120105.522:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 12:03:10.779 [6184:12080:1120/120310.779:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 20, 2024 12:03:10.779 [6184:12080:1120/120310.779:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 20, 2024 12:03:13.44 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 20, 2024 12:03:13.155 [6184:15040:1120/120313.155:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 12:03:33.353 [6184:15040:1120/120333.353:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 12:04:06.93 [6184:12080:1120/120406.093:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 20, 2024 12:04:06.94     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 20, 2024 12:04:06.94     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 20, 2024 12:04:06.94     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 20, 2024 12:04:06.94     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 20, 2024 12:04:06.94     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 20, 2024 12:04:06.94     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 20, 2024 12:04:14.310 [6184:15040:1120/120414.310:ERROR:registration_request.cc(291)] Registration response error message: QUOTA_EXCEEDED
+11월 20, 2024 12:09:11.326 [6184:12080:1120/120911.326:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 20, 2024 12:09:11.326     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 20, 2024 12:09:11.326     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 20, 2024 12:09:11.326     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 20, 2024 12:09:11.326     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 20, 2024 12:09:11.326     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 20, 2024 12:09:11.327     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 20, 2024 12:25:43.382 [6184:12080:1120/122543.382:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 20, 2024 12:25:43.382     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 20, 2024 12:25:43.383     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 20, 2024 12:25:43.383     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 20, 2024 12:25:43.383     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 20, 2024 12:25:43.383     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 20, 2024 12:25:43.383     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 20, 2024 12:49:44.871 [6184:12080:1120/124944.870:ERROR:CONSOLE(1)] "Request Network.loadNetworkResource failed. {"code":-32602,"message":"Unsupported URL scheme"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+11월 20, 2024 14:35:57.48 [6184:12080:1120/143557.034:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 20, 2024 14:35:57.48     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 20, 2024 14:35:57.48     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 20, 2024 14:35:57.48     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 20, 2024 14:35:57.48     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 20, 2024 14:35:57.48     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 20, 2024 14:35:57.48     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 20, 2024 15:52:48.341 [15276:9056:1120/155248.341:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 20, 2024 15:52:48.342 [15276:9056:1120/155248.341:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 20, 2024 15:52:50.717 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 20, 2024 15:52:50.831 [15276:12080:1120/155250.831:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 15:53:15.358 [15276:12080:1120/155315.358:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 15:54:08.642 [15276:12080:1120/155408.642:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 15:55:38.268 [15276:12080:1120/155538.268:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 15:58:32.144 [15276:12080:1120/155832.144:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:01:15.423 [2644:1528:1120/160115.423:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 20, 2024 16:01:15.423 [2644:1528:1120/160115.423:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 20, 2024 16:01:17.690 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 20, 2024 16:01:17.796 [2644:9076:1120/160117.795:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:01:41.96 [2644:9076:1120/160141.096:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:02:28.819 [2644:9076:1120/160228.819:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:04:06.487 [2644:9076:1120/160406.487:ERROR:registration_request.cc(291)] Registration response error message: QUOTA_EXCEEDED
+11월 20, 2024 16:08:21.502 [8552:12596:1120/160821.501:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 20, 2024 16:08:21.502 [8552:12596:1120/160821.501:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 20, 2024 16:08:23.800 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 20, 2024 16:08:23.897 [8552:3920:1120/160823.897:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:08:46.342 [8552:3920:1120/160846.341:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:09:42.827 [8552:3920:1120/160942.826:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:10:00.942 [11396:7292:1120/161000.942:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 20, 2024 16:10:00.942 [11396:7292:1120/161000.942:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 20, 2024 16:10:03.194 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 20, 2024 16:10:03.312 [11396:6052:1120/161003.312:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:10:29.403 [11396:6052:1120/161029.403:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:11:10.444 [11396:6052:1120/161110.444:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:12:47.612 [11396:6052:1120/161247.612:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:16:23.266 [11396:6052:1120/161623.266:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 20, 2024 16:17:05.477 [776:15036:1120/161705.477:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 20, 2024 16:17:05.478 [776:15036:1120/161705.477:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 20, 2024 16:17:07.847 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 20, 2024 16:17:07.959 [776:9792:1120/161707.959:ERROR:registration_request.cc(291)] Registration response error message: QUOTA_EXCEEDED
