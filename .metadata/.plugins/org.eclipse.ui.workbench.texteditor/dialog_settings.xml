@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="Enco"/>
+		<item key="selection" value=".modal"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value=".modal"/>
+			<item value="replyer"/>
+			<item value="register"/>
+			<item value="is"/>
+			<item value="sb"/>
+			<item value="addreply]"/>
+			<item value="addreply"/>
+			<item value="modify"/>
+			<item value=".."/>
+			<item value="resource"/>
+			<item value="userName"/>
+			<item value="username"/>
+			<item value="usename"/>
+			<item value="junit"/>
 			<item value="enco"/>
-			<item value="encoder"/>
-			<item value="header"/>
-			<item value="getFolder"/>
-			<item value="uploadFolderPath"/>
-			<item value="set"/>
-			<item value="uploadResult"/>
-			<item value="uploadResultArr"/>
-			<item value="showUploadFile"/>
-			<item value="model"/>
-			<item value="temp"/>
-			<item value="tmp"/>
-			<item value="updateReplyCnt"/>
-			<item value="getListWithPaging"/>
-			<item value="aspectj"/>
 		</list>
 		<list key="replacehistory">
+			<item value="resource"/>
+			<item value=""/>
 			<item value="/resources"/>
 			<item value="resources"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-225"/>
-		<item key="DIALOG_Y_ORIGIN" value="331"/>
+		<item key="DIALOG_X_ORIGIN" value="277"/>
+		<item key="DIALOG_Y_ORIGIN" value="487"/>
 		<item key="DIALOG_WIDTH" value="271"/>
 		<item key="DIALOG_HEIGHT" value="379"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
