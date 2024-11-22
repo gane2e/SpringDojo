@@ -271,9 +271,26 @@
 		
 		//댓글 삭제		
 		modalRemoveBtn.on("click", function(e){
+			
 			let rno = modal.data("rno");
 			
-			replyService.remove(rno, function(result){
+			//로그인 전이면 return
+			if(!replyer){
+				alert("로그인 후 삭제가 가능합니다.");
+				modal.modal("hide");
+				return;
+			}
+			
+			//로그인 후 진입 부분
+			let originalReplyer = modalInputReplyer.val();
+			
+			if(replyer != originalReplyer){
+				alert("자신이 작성한 댓글만 삭제가 가능합니다.");
+				modal.modal("hide");
+				return;
+			}
+			
+			replyService.remove(rno, originalReplyer, function(result){
 				alert(result);
 				modal.modal("hide");
 				showList(pageNum);

@@ -81,12 +81,29 @@
     <!-- Custom Theme JavaScript -->
     <script src="/resources/dist/js/sb-admin-2.js"></script>
 
-<script type="text/javascript">
- $('.btn-success').on("click", function(e){
-    e.preventDefault();
-    $("form").submit();
- })
-</script>
+<!--  <script type="text/javascript">
+    $('.btn-success').click(function(e){
+       e.preventDefault();
+       $('form').submit();
+       
+    });
+    </script> -->
+    
+    <script>
+		$(".btn-success").on("click", function(e){
+			e.preventDefault();
+			$("form").submit();
+		});
+	</script>
+    
+    <c:if test="${ param.logout != null }">
+       <script type="text/javascript">
+       $(function(){
+          alert("로그아웃되었습니다.")
+       });
+       </script>
+    </c:if>
+
 </body>
 
 </html>
