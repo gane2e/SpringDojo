@@ -236,3 +236,38 @@
 11월 21, 2024 17:53:57.491 [13436:3324:1121/175357.491:ERROR:CONSOLE(1)] "Unknown VE context: -ms-text-size-adjust    at a (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:66546)
 11월 21, 2024 17:53:57.491     at e.Me (devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js:1:83574)
 11월 21, 2024 17:53:57.491     at devtools://devtools/bundled/devtools-frontend/front_end/ui/components/render_coordinator/render_coordinator.js:1:150", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+
+11월 25, 2024 15:10:00.681 NEW SESSION
+11월 25, 2024 15:10:00.681 [7360:6800:1125/151000.679:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 25, 2024 15:10:00.681 [7360:6800:1125/151000.679:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 25, 2024 15:10:02.992 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 25, 2024 15:10:03.110 [7360:10532:1125/151003.110:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:10:32.171 [7360:10532:1125/151032.171:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+11월 25, 2024 15:11:23.848 [7360:10532:1125/151123.848:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:12:59.162 [7360:10532:1125/151259.162:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:16:10.484 [7360:10532:1125/151610.484:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:23:40.704 [7360:10532:1125/152340.704:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:35:42.468 [7360:6800:1125/153542.467:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 25, 2024 15:35:42.468     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 25, 2024 15:35:42.468     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 25, 2024 15:35:42.468     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 25, 2024 15:35:42.468     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 25, 2024 15:35:42.468     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 25, 2024 15:35:42.468     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+11월 25, 2024 15:44:45.343 [6380:7552:1125/154445.343:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3.html,*
+11월 25, 2024 15:44:45.344 [6380:7552:1125/154445.343:ERROR:content_settings_pref.cc(381)] Invalid pattern strings: file:///C:/Users/m10/Desktop/%ED%95%99%EC%8A%B5%EC%9E%90%EB%A3%8C/html,%20css,%20javascript/JS/2_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8API%ED%99%9C%EC%9A%A9%EC%98%88%EC%A0%9C%EB%93%A4/exam3_1.html,*
+11월 25, 2024 15:44:47.575 Created TensorFlow Lite XNNPACK delegate for CPU.
+11월 25, 2024 15:44:47.680 [6380:4100:1125/154447.679:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:45:09.118 [6380:4100:1125/154509.118:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:46:02.654 [6380:4100:1125/154602.654:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:47:48.666 [6380:4100:1125/154748.666:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:51:25.589 [6380:4100:1125/155125.589:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 15:59:16.144 [6380:4100:1125/155916.143:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+11월 25, 2024 16:38:25.884 [6380:7552:1125/163825.883:ERROR:interface_endpoint_client.cc(725)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 25, 2024 16:49:16.244 [6380:7552:1125/164916.244:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+11월 25, 2024 16:49:16.244     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+11월 25, 2024 16:49:16.244     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+11월 25, 2024 16:49:16.245     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+11월 25, 2024 16:49:16.245     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+11월 25, 2024 16:49:16.245     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+11월 25, 2024 16:49:16.245     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
