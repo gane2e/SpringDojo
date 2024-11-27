@@ -5,6 +5,7 @@
 
 <mapper namespace="org.zerock.mapper.ProductMapper">
 	
+	<!-- 상품리스트 가져오기 -->
 	<select id="getProduct" resultType="org.zerock.domain.ProductVO">
   		SELECT 
   			CNO, SERIAL, GIGA, PRICE, PHONE_NAME, PHONE_SIZE, 
@@ -14,11 +15,13 @@
   		where cno>0
  	</select>
  	
+ 	<!-- 1개상품정보 읽기 -->
  	<select id="read" resultType="org.zerock.domain.ProductVO">
  			SELECT 
   			CNO, SERIAL, GIGA, PRICE, PHONE_NAME, PHONE_SIZE, 
   			PHONE_WEIGHT, CAMERA, BATTERY, MEMORY, STATUS, 
-  			MANUFACTURER, COLOR, CPU, OPTIONS, RELEASE_DATE, OS
+  			MANUFACTURER, COLOR, CPU, OPTIONS, RELEASE_DATE, 
+  			OS, THUMBNAIL, DESCRIPTION1, DESCRIPTION2
   		from phonepro 
   		where cno=#{cno}
  	</select>
