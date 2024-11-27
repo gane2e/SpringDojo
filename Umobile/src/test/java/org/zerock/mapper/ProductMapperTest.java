@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.zerock.domain.OrderVO;
 import org.zerock.domain.ProductVO;
 
 import lombok.extern.log4j.Log4j;
@@ -19,9 +20,11 @@ public class ProductMapperTest {
 	@Autowired
 	public ProductMapper mapper;
 	
-	@Test
-	public void test() {
+	@Test //상품리스트 테스트
+	public void getProductTest() {
 		mapper.getProduct().forEach(product -> log.info(product));
 	}
+	
+	
 
 }

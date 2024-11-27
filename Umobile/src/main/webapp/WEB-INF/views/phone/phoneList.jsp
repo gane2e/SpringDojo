@@ -192,15 +192,14 @@
                            </span>
                         	${product.phone_Name}
                          </h3>
-                         <p>LTE (1.5GB/통화기본)</p>
-                         <p>통신요금 25,900원+할부금 0원</p>
+                         <p>${product.description1}</p>
+                         <p>${product.description2}</p>
                          
                       </div>
                         <div class="phone-cont-bottom">
                             <p class="normal-txt">
                               월 납부금액
                               <strong class="txt-vt">
-                                 <span class="dc-prc"> ${product.price}</span>
                                 ${product.price}
                               </strong>
                             </p>
@@ -221,7 +220,7 @@
  
 
  
-<%@ include file="../includes/mainfooter.jsp"%>
+<%-- <%@ include file="../includes/mainfooter.jsp"%> --%>
 </body>
 </html>
 <script>

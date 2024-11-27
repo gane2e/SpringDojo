@@ -10,7 +10,7 @@ public class ProductVO {
 	   private long cno;            // 식별 번호
 	   private String serial;       // 휴대폰 시리얼넘버
 	   private String giga;         // 휴대폰 용량
-	   private long price;          // 휴대폰 가격
+	   private String price;          // 휴대폰 가격
 	   private String phone_Name;    // 휴대폰 이름
 	   private String phone_Size;    // 휴대폰 사이즈
 	   private String phone_Weight;  // 휴대폰 무게

@@ -2,6 +2,7 @@ package org.zerock.mapper;
 
 import java.util.List;
 
+import org.zerock.domain.OrderVO;
 import org.zerock.domain.ProductVO;
 
 

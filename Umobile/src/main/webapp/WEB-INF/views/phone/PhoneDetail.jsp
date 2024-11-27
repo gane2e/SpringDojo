@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,27 +13,27 @@
 <body>
  <%@ include file="../includes/header.jsp"%>
 
-
-	<form method="post" action="">
+	<!-- 경로 수정중 -->
+	<form method="post" action="/phone/add">
 		<div class="sub-conts product-info">
 			<div class="box-phone-info">
 			  <div class="phone-thumb">
-			  
 			  </div>
+			  
 			  <div class="phone-detail">
 			      <div class="detail-top">
 			         <div class="box-name">
 			            <h2 class="product-name">
-			            <span>삼성 갤럭시 A25</span>
+			            <span>${product.phone_Name}</span>
 			            <div class="chip-wrap">
 			             <img src="${pageContext.request.contextPath}/resources/img/chip-5g.png">
 			            </div>
 			            </h2>
 			            <button class="btn-share"></button>
 			            <ul class="box-detail">
-			               <li>OMD-SM-A256N</li>
-			               <li> 128GB</li>
-			               <li> 새폰</li>
+			               <li>${product.serial}</li>
+			               <li>${product.giga}</li>
+			               <li>${product.status}</li>
 			            </ul>
 			         </div>
 			      </div>
@@ -43,28 +44,28 @@
 			          <dd class="box-pick-color">
 								<ul class="color-type">
 									<li><input type="radio" id="color1" name="color"
-										value="#c8a4b5" data-count="1" data-colorseq="1"
+										value="핑크골드" data-count="1" data-colorseq="1"
 										data-colornm="핑크골드"> <label for="color1"
 										style="background-color: #c8a4b5"> <b class="hidden">핑크골드</b>
 									</label></li>
 									<li><input type="radio" id="color2" name="color"
-										value="#fff" data-count="2" data-colorseq="2"
+										value="펜텀 화이트" data-count="2" data-colorseq="2"
 										data-colornm="펜텀 화이트"> <label for="color2"
 										style="background-color: #fff"> <b class="hidden">펜텀
 												화이트</b>
 									</label></li>
 									<li><input type="radio" id="color3" name="color"
-										value="#008000" data-count="3" data-colorseq="3"
+										value="그린" data-count="3" data-colorseq="3"
 										data-colornm="그린"> <label for="color3"
 										style="background-color: #008000"> <b class="hidden">그린</b>
 									</label></li>
 									<li><input type="radio" id="color4" name="color"
-										value="#800080" data-count="4" data-colorseq="4"
+										value="퍼플" data-count="4" data-colorseq="4"
 										data-colornm="B퍼플"> <label for="color4"
 										style="background-color: #800080"> <b class="hidden">B퍼플</b>
 									</label></li>
 									<li><input type="radio" id="color5" name="color"
-										value="#000000" data-count="5" data-colorseq="5"
+										value="펜텀 블랙" data-count="5" data-colorseq="5"
 										data-colornm="블랙"> <label for="color5"
 										style="background-color: #000000"> <b class="hidden">블랙</b>
 									</label></li>
@@ -74,24 +75,26 @@
 			            </div>
 			          </dd> 
 			        </dl>
+			        
+			        
 			        <dl class="phone-type-form1">
 			          <dt>할부개월</dt>
 			          <dd>
 			            <div class="btn-radio-group radio-list">
 			               <div class="btn-radio">
-			                  <input type="radio" id="devHalbuMonth1" name="devHalbuMonth" value="12" data-devhalbumonth="12" data-gtm-form-interact-field-id="1">
+			                  <input type="radio" id="devHalbuMonth1" name="devHalbuMonth" value="12개월" data-devhalbumonth="12" data-gtm-form-interact-field-id="1">
 			                   <label for="devHalbuMonth1">12개월</label>
 			               </div>
 			                <div class="btn-radio">
-			                  <input type="radio" id="devHalbuMonth2" name="devHalbuMonth" value="24" data-devhalbumonth="24" data-gtm-form-interact-field-id="2">
+			                  <input type="radio" id="devHalbuMonth2" name="devHalbuMonth" value="24개월" data-devhalbumonth="24" data-gtm-form-interact-field-id="2">
 			                   <label for="devHalbuMonth2">24개월</label>
 			               </div>
 			               <div class="btn-radio">
-			                  <input type="radio" id="devHalbuMonth3" name="devHalbuMonth" value="30" data-devhalbumonth="30" data-gtm-form-interact-field-id="3">
+			                  <input type="radio" id="devHalbuMonth3" name="devHalbuMonth" value="30개월" data-devhalbumonth="30" data-gtm-form-interact-field-id="3">
 			                   <label for="devHalbuMonth3">30개월</label>
 			               </div>
 			               <div class="btn-radio">
-			                  <input type="radio" id="devHalbuMonth4" name="devHalbuMonth" value="36" data-devhalbumonth="36" data-gtm-form-interact-field-id="4">
+			                  <input type="radio" id="devHalbuMonth4" name="devHalbuMonth" value="36개월" data-devhalbumonth="36" data-gtm-form-interact-field-id="4">
 			                   <label for="devHalbuMonth4">36개월</label>
 			               </div>
 			               <div class="btn-radio">
@@ -104,11 +107,15 @@
 			            </div>
 			          </dd>
 			        </dl>
+			        
+			        
 			        <div class="banner-slid">
 			           <a href="#"><img src="${pageContext.request.contextPath}/resources/img/PC_휴대폰상세.png"></a>
 			        </div>
 			      </div>
 			  </div> 
+			  
+			  
 			</div>
 			<!-- 요금제 선택  -->
 			<div class="box-tab02 tab-ctrl">
@@ -399,9 +406,11 @@
 			              <div class="show-conts">
 			                 <div class="price-conts sello-prc">
 			                   <div class="price">
-			                   부가세포함 월 납부 금액
+			                    	<span id="payment-text">
+			                    		<!-- 부가세포함 월 납부금액 or (일시불 선택시)결제금액 -->
+			                    	</span>
 			                   <strong class="txt-tv">
-			                      <span id="monthMoneyFeeDw3">19,900</span>
+			                      <span id="monthMoneyFeeDw3">${product.price}</span>
 			                      원
 			                   </strong>
 			                   </div>
@@ -427,12 +436,21 @@
 			    <!--  팝업 끝  -->
 			</div>
 		</div>
+		
+		<!-- 할부개월에 따른 결제금액을 계산해서 hidden으로 전송함 -->
+		<input type="hidden" name="uno" id="uno" value="${sessionScope.uno}">
+		<input type="hidden" name="cno" id="cno" value="${product.cno}">
+		<input type="hidden" name="phonecolor" id="colorField" value="">
+		<input type="hidden" name="installment" id="installmentField" value="">
+		<input type="hidden" name="vatPrice" id="vatPriceField" value="">
+		
 	</form>
 
 </body>
 </html>
 
 <script>
+ //클릭시 컬러변경 ?
 const radioButtons = document.querySelectorAll('input[name="color"]');
 
 
@@ -445,7 +463,7 @@ radioButtons.forEach(button => {
     });
 });
 
-
+//탭
 document.querySelectorAll('.tab-btn-wrap a').forEach(tab => {
     tab.addEventListener('click', function (event) {
         event.preventDefault();
@@ -468,6 +486,83 @@ document.querySelectorAll('.tab-btn-wrap a').forEach(tab => {
         tabContents[index].classList.add('active');
     });
 });
+
+
+//할부 개월수에 따른 월 납부금액 계산
+document.addEventListener("DOMContentLoaded", function() {
+	
+    const basePrice = parseInt("${product.price.replace(',', '')}"); // 기본 가격을 가져옵니다.
+    const vatRate = 0.1; // 부가세 비율 (10%)
+    
+    // 월 납부 금액을 계산하는 함수
+    function updateMonthlyPrice() {
+    	
+    	//선택한 할부개월(예: 12개월)
+        const selectedMonth = document.querySelector('input[name="devHalbuMonth"]:checked');
+
+    	const monthValue = selectedMonth ? selectedMonth.value : null; // 선택된 할부 개월
+
+    	//해당 휴대폰 상품의 기본 가격을 finalPrice 에 할당
+        let finalPrice = basePrice;
+
+      	//선택한 할부개월이 일시불이 아니면,, 기본 가격에 할부개월수를 나눠 finalPrice에 할당함
+      
+        if (monthValue && monthValue !== '일시불') {
+            // 할부가 선택된 경우
+            finalPrice = basePrice / parseInt(monthValue);
+        }
+
+        // 할부적용한 가격 * 부가세 포함 금액 계산
+        const vatPrice = finalPrice * (1 + vatRate);
+        
+     	// 50원 단위로 올림처리 (소수점 없이 50원 단위로 올림)
+        const roundedVatPrice = Math.ceil(vatPrice / 50) * 50;
+        
+        // 화면에 부가세 포함 월 납부 금액을 표시
+        document.getElementById("monthMoneyFeeDw3").textContent = vatPrice.toLocaleString();
+        
+        // "일시불"이 선택된 경우 '월 납부금액' 텍스트를 '결제금액'으로 변경
+        const paymentText = document.getElementById("payment-text");
+        if (monthValue === '일시불') {
+            paymentText.textContent = '결제금액'; // '결제금액'으로 변경
+        } else {
+            paymentText.textContent = '월 납부금액'; // 기본 '월 납부금액'으로 변경
+        }
+        
+     	// VAT 가격을 hidden 필드에 올림된 값 할당
+        document.getElementById("vatPriceField").value = roundedVatPrice;
+     	
+        // 선택된 할부 개월 수를 hidden 필드에 설정
+        if (selectedMonth) {
+            document.getElementById("installmentField").value = monthValue; // selectedMonth.value 값을 hidden 필드에 넣기
+        }
+    }
+
+    // 할부 기간 선택 시마다 월 납부 금액을 업데이트
+    document.querySelectorAll('input[name="devHalbuMonth"]').forEach(input => {
+        input.addEventListener("change", updateMonthlyPrice);
+    });
+
+    // 페이지 로드 시 초기 값으로 월 납부 금액 업데이트
+    updateMonthlyPrice();
+}); // 월 납부 금액 계산 END
+
+
+
+//색상 선택 시 hidden 필드에 값 설정
+function updateColor() {
+    const selectedColor = document.querySelector('input[name="color"]:checked');
+    if (selectedColor) {
+        document.getElementById('colorField').value = selectedColor.value; // 선택된 색상 값을 hidden 필드에 설정
+    }
+}
+
+//색상이 변경될 때마다 updateColor 호출
+document.querySelectorAll('input[name="color"]').forEach(function(radio) {
+    radio.addEventListener('change', updateColor);  // 색상 선택 시마다 호출
+});
+
+
 
 
 </script>

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.AdminVO;
+import org.zerock.domain.ProductVO;
 import org.zerock.mapper.AdminMapper;
 import org.zerock.mapper.UserMapper;
 
@@ -33,6 +34,11 @@ public class AdminServiceImpl implements AdminService{
         }
         
 		return null; //로그인 실패
+	}
+
+	@Override
+	public void insertPhone(ProductVO productVO) {
+		mapper.insertPhone(productVO);
 	}
 
 }

@@ -11,5 +11,19 @@
 		FROM ADMIN
 		WHERE USERNAME=#{username}
 	</select>
+	
+	<!-- 휴대폰 정보를 등록하는 SQL 문 -->
+    <insert id="insertPhone">
+        INSERT INTO PHONEPRO (
+            CNO, SERIAL, GIGA, PRICE, PHONE_NAME, PHONE_SIZE, PHONE_WEIGHT, CAMERA, 
+            BATTERY, MEMORY, STATUS, MANUFACTURER, COLOR, CPU, OPTIONS, RELEASE_DATE, 
+            OS, THUMBNAIL, DESCRIPTION1, DESCRIPTION2
+        ) 
+        VALUES (
+            SEQ_PHONEPRO.nextval, #{serial}, #{giga}, #{price}, #{phone_Name}, #{phone_Size}, #{phone_Weight}, #{camera},
+            #{battery}, #{memory}, #{status}, #{manufacturer},  #{color}, #{cpu}, #{options}, #{release_Date},
+            #{os}, #{thumbnail}, #{description1}, #{description2}
+        )
+    </insert>
 
 </mapper>

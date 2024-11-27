@@ -115,7 +115,7 @@ public class UserController {
 		
 		
 		log.info("-------로그인 완료-----------");
-		log.info(username);
+		log.info("유저 ID ---> " + username);
 		
 		UserVO user = service.login(username, password);
 		
@@ -127,11 +127,14 @@ public class UserController {
 		// 뷰에 데이터를 전달용
         model.addAttribute("user", user);
         
-        // 로그인 성공 시 세션에 사용자 정보 저장
-        session.setAttribute("user", user);
+        // 로그인 성공 시 세션에 유저 고유키 저장
+        session.setAttribute("uno", user.getUno());
         
-        log.info("로그인한 유저정보 ------> " + user);
-        log.info("Model정보 ------> " + model);
+        // 로그인유저 uno 세션저장 테스트
+        Long uno = (Long) session.getAttribute("uno");
+        log.info("로그인한 유저 세션 uno값 ---> " + uno);
+        log.info("로그인한 유저 vo값 ---> " + user);
+        log.info("로그인한 유저 model ---> " + model);
 		
 		return "redirect:/";
 	}
