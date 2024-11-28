@@ -28,7 +28,7 @@ public class PhoneController {
 	private final ProductService service;
 	private final OrderService orderService;
 	
-	  @GetMapping("/phoneList") 
+	  @GetMapping("/phoneproduct") 
 	    public void phoneProductPage(Model model) {
 		  
 			List<ProductVO> products = service.getProduct();
@@ -74,7 +74,7 @@ public class PhoneController {
 
 	    	orderService.addPhone(orderVO);
 	    	
-	    	return "redirect:/phone/phoneList";
+	    	return "redirect:/phone/phoneproduct";
 	    }
 	    
 	    

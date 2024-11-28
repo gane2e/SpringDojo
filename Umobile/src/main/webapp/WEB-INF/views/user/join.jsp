@@ -20,23 +20,23 @@
              <div class="main-txt-group">
                 <h2 class="main-txt"></h2>
              </div>
-             <form action="" method="" id="signupForm">
+             <form action="doJoin" method="post" id="signupForm">
              <div id="divid" class="box-input">
                 <div class="input-wrap">
                    <input id="email" type="text" name="email" placeholder="이메일(아이디)를 입력해주세요" class="input-default is-delete" title="email">
-                   <button class="Btn-1" onclick="">중복확인 </button>
+                   <button class="Btn-1" onclick="checkEmailDuplication()">중복확인</button>
                 </div>
                 <div class="input-wrap">
-                   <input id="name" type="text" name="password" placeholder="이름을 입력하세요" class="input-default is-delete" title="name">
+                   <input id="name" type="text" name="name" placeholder="이름을 입력하세요" class="input-default is-delete" title="name">
                 </div>
                 <div class="input-wrap">
                    <input id="password" type="password" name="password" placeholder="비밀번호 를 입력하세요" class="input-default is-delete" title="password">
                 </div>
                 <div class="input-wrap">
-                   <input id="password" type="password" name="password" placeholder="비밀번호 를 한번 더 입력하세요" class="input-default is-delete" title="password">
+                   <input id="passwordConfirm" type="password" name="passwordConfirm" placeholder="비밀번호 를 한번 더 입력하세요" class="input-default is-delete" title="password">
                 </div>
                 <div class="input-wrap">
-                   <input id="phone" type="text" name="phone" placeholder="핸드폰 번호 를 입력하세요" class="input-default is-delete" title="phone">
+                   <input id="phone" type="text" name="phone" placeholder="핸드폰 번호 를 입력하세요" class="input-default is-delete" title="phone" oninput="formatPhoneNumber(this)">
                 </div>
                 <div class="input-wrap">
                    <input id="addr" type="text" name="addr" placeholder="주소 를 입력하세요" class="input-default is-delete" title="addr">
@@ -77,17 +77,18 @@
       return;
     }
 
-    if (!validatePhone(phone)) {
+/*     if (!validatePhone(phone)) {
       alert('유효한 전화번호를 입력하세요.');
       return;
-    }
+    } */
 
     if (addr === '') {
       alert('주소를 입력하세요.');
       return;
     }
 
-    alert('회원가입 성공!');
+    alert('회원가입이 완료되었습니다.');
+    document.getElementById('signupForm').submit();  // 폼 제출
 
   });
 

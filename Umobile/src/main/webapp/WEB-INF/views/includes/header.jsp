@@ -186,17 +186,18 @@ $(document).ready(function () {
 
 /* 로그인 전, 후 보여주는   */
 
-/* function checkLoginStatus() {
+/*  function checkLoginStatus() {
 
   return false; // true는 로그인 상태, false는 비로그인 상태
 }
-
+ */
 document.addEventListener("DOMContentLoaded", function () {
   const navSub = document.querySelector(".navsub");
   const loginBox = document.querySelector(".loginboxs");
   const navImg = document.querySelector(".navlog > a");
+  const session = "${sessionScope.user}";
 
-  if (checkLoginStatus()) {
+  if (session !== null && session !== "") {
     // 로그인 상태일 경우
     navSub.style.display = "none";
     loginBox.style.display = "block";
@@ -207,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loginBox.style.display = "none";
     navImg.style.display = "none";
   }
-}); */
+});
 
 /* 로그인 전, 후 보여주는   */
 
