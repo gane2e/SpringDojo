@@ -17,6 +17,7 @@ public class ProductVO {
 	   private String camera;       // 휴대폰 카메라 정보
 	   private String battery;      // 휴대폰 배터리 정보
 	   private String memory;       // 휴대폰 메모리 정보
+	   private String display;       // 휴대폰 메모리 정보
 	   private String status;       // 휴대폰 상태
 	   private String manufacturer; // 제조사
 	   private String color;        // 색상
@@ -28,5 +29,4 @@ public class ProductVO {
 	   private byte[] thumbnail;      // 상품 썸네일 (이미지 파일 저장, byte 배열)
 	   private String description1;   // 상품설명1
 	   private String description2;   // 상품설명2
-	
 }

@@ -6,12 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link href="${path}/resources/csss/index.css" rel="stylesheet"/> 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
  <%@ include file="./includes/header.jsp"%>
@@ -19,7 +21,7 @@
     <!--  슬라이더 시작  -->
     
     <div class="slider-container">
-        <div class="slider">
+        <div class="slider">ㅋ
             <div class="slide">
                 <img src="resources/img/slider.png" alt="슬라이드 1">
             </div>
@@ -386,180 +388,61 @@
   
   <!-- subscript 시작  -->
   
-   <div id="subscript">
-      <div class="subscript-tit">
-         <h2 class="sec-tit">포인트로 돌려받는 구독 서비스</h2>
-         <div class="more-btn">
-          <a href="#" id="subscribe_all_btn">구독 서비스 전체보기</a>
-         </div>
-      </div>
-      
-      <!--  슬라이드 시작 -->
-         <div class="subsBannerArea">
+<div id="subscript">
+  <div class="subscript-tit">
+    <h2 class="sec-tit">포인트로 돌려받는 구독 서비스</h2>
+    <div class="more-btn">
+      <a href="#" id="subscribe_all_btn">구독 서비스 전체보기</a>
+    </div>
+  </div>
+<div class="slider-l"> 
+  <!-- 슬라이드 시작 -->
+<div class="subsBannerArea">
   <div class="top-slider">
-    <div class="subscription-box">
-     
-
-      <!-- 실제 슬라이드 -->
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king1.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king2.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king3.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king4.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king5.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king6.png">
-        </a>
-      </div>
-   <!-- 실제 슬라이드 -->
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king1.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king2.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king3.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king4.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king5.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king6.png">
-        </a>
-      </div>
-     
+      <!-- 상단 슬라이드용 -->
+    <div class="subscription-box top-slider-box"> 
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king1.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king2.png"> </a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king3.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king4.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king5.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king6.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king1.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king2.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king3.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king4.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king5.png"></a></div>
+      <div class="MAIN"><a href="#" class="king"><img src="resources/img/king6.png"></a></div>
     </div>
   </div>
 </div>
-         
-         <div class="subsBannerArea2">
-            <div class="bottom-slider">
-               <div class="subscription-box">
-                <!-- 실제 슬라이드 -->
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king1.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king2.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king3.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king4.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king5.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king6.png">
-        </a>
-      </div>
-   <!-- 실제 슬라이드 -->
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king1.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king2.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king3.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king4.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king5.png">
-        </a>
-      </div>
-      <div class="MAIN">
-        <a href="#" class="king">
-          <img src="resources/img/king6.png">
-        </a>
-      </div>
-               </div>
-            </div>
-         </div>
+
+<div class="subsBannerArea2">
+  <div class="bottom-slider">
+      <!-- 하단 슬라이드-->
+    <div class="subscription-box bottom-slider-box"> 
+      <div class="MAIN"><a href="#"><img src="resources/img/king.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king1.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king2.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king3.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king4.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king5.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king6.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king1.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king2.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king3.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king4.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king5.png"></a></div>
+      <div class="MAIN"><a href="#"><img src="resources/img/king6.png"></a></div>
       
-      
-      <!--  슬라이드 끝 -->
-      
-   </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
   
   <!-- subscript 끝  -->
   
@@ -703,52 +586,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* d-day 카운트 */
-   $(document).ready(function() {
-        var $counter = $('.countDays');
-        var targetDate = new Date(2025, 11, 17, 0, 0, 0); 
-
-        if ($counter.length) {  
-            updateCounter();
-
-            function updateCounter() {
-                var today = new Date();
-                var gap = targetDate.getTime() - today.getTime(); 
-                console.log("Target Date Time:", targetDate.getTime()); 
-                console.log("Today Time:", today.getTime()); 
-                console.log("Gap:", gap); // 차이 밀리초 로그
-
-                var remainingDays = Math.ceil(gap / (1000 * 60 * 60 * 24)); 
-                console.log("Remaining Days:", remainingDays); 
-
-                if (remainingDays > 0) {
-                    $counter.html(`D-${remainingDays}`);
-                } else if (remainingDays === 0) {
-                    $counter.html('D-Day입니다!');
-                } else {
-                    $counter.html('D-Day가 지났습니다!');
-                }
-            }
-
-          
-            setInterval(updateCounter, 1000 * 60 * 60 * 24); 
-        }
-    });
+   $(document).ready(function(){
+	   
+	   var endDate = new Date("2024-12-31T23:59:59");
+	   var countdownElement = $('.countDays');
+	   
+	   function updateCountdown(){
+		   var now = new Date();
+		   var timeDiff = endDate - now;
+		   
+		   if(timeDiff > 0){
+			   var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+			   countdownElement.text('D-' + days);
+		   }else{
+				   countdownElement.text('D-Day');
+			   
+		   }
+	   }
+	   updateCountdown();
+	   setInterval(updateCountdown, 1000);
+   });
 /* d-day 카운트 끝 */
 
  
 /*  중간 슬라이드 */
 
-/* 클릭시 밑선 데이터 */
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('.tab-btn-wrap .afee');
-    links.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        links.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-  });
+
 
   /* 클릭시 밑선 데이터 */
   

@@ -37,7 +37,7 @@ public class UserServiceImple implements UserService {
         params.put("username", username);
         
         // DB에서 사용자 정보를 조회
-        UserVO userVO = mapper.read(params);
+        UserVO userVO = mapper.login(params);
 		
         log.info("userVO -------------> " + userVO);
         
@@ -57,9 +57,14 @@ public class UserServiceImple implements UserService {
 		return mapper.checkEmail(email) > 0;
 	}
 	
-	@Override
+	@Override //회원정보 수정(비밀번호 포함X)
 	public boolean updateUser(UserVO vo) {
 		return mapper.updateUser(vo);
+	}
+	
+	@Override //회원정보 수정(비밀번호 포함O)
+	public boolean updateUserPw(UserVO vo) {
+		return mapper.updateUserPw(vo);
 	}
 	
 

@@ -15,7 +15,7 @@
 			    <li><a href="">상품</a></li>
 				<li><a href="#">이벤트/혜택</a></li>
 				<li><a href="/user/notice">공지사항</a></li>
-				<li><a href="/user/Edit">내 정보</a></li>
+				<li><a href="#" id="toggleLink-1">내 정보</a></li>
 				<li><a href="#">유모바일</a></li>			
 			</ul>
 			<div class="submenu">
@@ -34,10 +34,25 @@
 			      </div>
 			      <ul class="submeul">
 			        <li class="submeli"><a href="#">가입신청</a></li>
-			     
+			          
 			      </ul>
 			  </div>
 			</div>
+			<!-- 내 정보 서브 메뉴 시작  -->
+			<div class="submenu-1">
+			   <div class="submenus-1">
+			       <ul class="submeul-1">
+			           <li class="submeli-1"><a href="/user/checkdetails">신청 내역</a></li>
+			       </ul>
+			   </div>
+			    <div class="submenus-1">
+			       <ul class="submeul-1">
+			           <li class="submeli-1"><a href="/user/Edit">정보 수정</a></li>
+			       </ul>
+			   </div>
+			</div>
+			
+			<!-- 내 정보 서브 메뉴  끝 -->
 		</div>
 		
 		<div class="top-util">
@@ -47,20 +62,19 @@
 		     </a>
 		    </div>
 		      <div class="navlog">
-		       <a href="#">
-		       <img class="navimg" src="${pageContext.request.contextPath}/resources/img/navlog2.png" id="togoll">
-		      <b class="state"  style="display: none;">ON</b>
-		       </a>
-		       
-		       <!--  로그인 전에만 보이는 부분 -->
-		           <div class="navsub" >
+				<a href="#"> <img class="navimg"
+					src="${pageContext.request.contextPath}/resources/img/navlog2.png"
+					id="togoll"> <b class="state" style="display: none;">ON</b> <!-- 로그인 후 상태 -->
+				</a>
+				<!--  로그인 전에만 보이는 부분 -->
+		           <div class="navsub"  style="display: none;">
 		               <div class="info-basic">
               		<button type="button" id="btns" class="top-login" onclick="window.location.href = '/user/login';">
               		로그인
               		</button>
 		                <ul class="find-join">
 		                  <li><a href="#">ID/비밀번호찾기</a></li>
-		                  <li><a href="user/join">회원가입</a></li>
+		                  <li><a href="/user/join">회원가입</a></li>
 		                </ul>
 		               </div>
 		              <div class="info-func">
@@ -72,12 +86,10 @@
 		                 </div>
 		              </div>
 	               </div>
-	               
-	               
 	               <!-- 로그인 후에만 보이는 부분  -->
-	               <div class="loginboxs"style="display: none;">
+	               <div class="loginboxs">
 	                   <strong class="info-user">
-	                       <name id="gnbMmbrNm">이동희</name>
+	                       <name id="gnbMmbrNm"></name>
 	                       님
 	                       <a href="#" class="member-modify">회원정보수정</a>
 	                   </strong>
@@ -87,7 +99,7 @@
 	                            <a href="#" class="member-modify2">신청내역 조회</a>
 	                          </li>
 	                          <li class="btnSBMB">
-	                            <a href="#" class="btn-num-auth">유모바일 번호 인증</a>
+	                            <a href="/phone/comparison" class="btn-num-auth">견적 비교하기</a>
 	                          </li>
 	                       </ul>
 	                       
@@ -112,16 +124,12 @@
 	                   <button onclick="" class="btn-text-right-s btn-logout" type="button">로그아웃</button>
 	                   </div>
 	               </div>
-	               
-	               
 		    </div>
 		      <div class="navlog">
 		       <a href="#">
 		       <img class="navimg" src="${pageContext.request.contextPath}/resources/img/navlog3.png">
 		      </a>
 		    </div>
-		    
-		    
 		</div>
     </div>
     
@@ -145,25 +153,43 @@ $(document).ready(function() {
 });
 
 
+ $(document).ready(function() {
+    let isSubmenuVisible = false; // .submenu 표시 상태 변수
+
+    $('#toggleLink-1').click(function() {
+        isSubmenuVisible = !isSubmenuVisible; // 상태 토글
+        if (isSubmenuVisible) {
+            $('.submenu-1').show(); // 표시
+        } else {
+            $('.submenu-1').hide(); // 숨김
+        }
+    });
+}); 
+
 <!--메뉴 펼침 -->
 
 <!-- 로그인 모달 -->
-$(document).ready(function() {
-	    $('#togoll').click(function() {
-	        $('.navsub').toggle();  // .navsub의 표시/숨김을 토글
-	    });
-	});
+$(document).ready(function () {
+    $('#togoll').click(function () {
+        if ($('.state').is(':visible')) {
+            // 로그인 후 상태: .state가 보이는 경우
+            $('.loginboxs').toggle(); // 로그인 박스 토글
+        } else {
+            // 로그인 전 상태: .state가 보이지 않는 경우
+            $('.navsub').toggle(); // 네비게이션 메뉴 토글
+        }
+    });
+});
 
 <!-- 로그인 모달 -->
 
 
-/* 로그인 전, 후 보여주는 */
+/* 로그인 전, 후 보여주는   */
 
-function checkLoginStatus() {
+/* function checkLoginStatus() {
 
-    return false;
+  return false; // true는 로그인 상태, false는 비로그인 상태
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const navSub = document.querySelector(".navsub");
@@ -181,10 +207,9 @@ document.addEventListener("DOMContentLoaded", function () {
     loginBox.style.display = "none";
     navImg.style.display = "none";
   }
-});
+}); */
 
 /* 로그인 전, 후 보여주는   */
 
-/* 로그인 전, 후 보여주는   */
 
 </script>

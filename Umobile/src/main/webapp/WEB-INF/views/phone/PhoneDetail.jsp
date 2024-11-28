@@ -336,55 +336,55 @@
 				              <th scope="row">
 				                제조사
 				              </th>
-				              <td>삼성</td>
+				              <td>${product.manufacturer}</td>
 				              <th scope="row">
 				                출시일
 				              </th>
-				              <td>2024.01.05</td>
+				              <td>${product.release_Date}</td>
 				            </tr>
 				            <tr class="tr">
 				              <th scope="row">
 				                크기
 				              </th>
-				              <td>161.0x76.5x8.3mm</td>
+				              <td>${product.phone_Size}</td>
 				              <th scope="row">
 				                무게
 				              </th>
-				              <td>197g</td>
+				              <td>${product.phone_Weight}</td>
 				            </tr>
 				             <tr class="tr">
 				              <th scope="row">
 				                배터리
 				              </th>
-				              <td>5000mAh</td>
+				              <td>${product.battery}</td>
 				              <th scope="row">
 				                OS
 				              </th>
-				              <td>Android </td>
+				              <td>${product.os}</td>
 				            </tr>
 				            <tr>
 				              <th scope="row">색상</th>
-				              <td colspan="3">라이트블루/옐로우/블루블랙</td>
+				              <td colspan="3">${product.color}</td>
 				            </tr>
 				            <tr>
 				              <th scope="row">CPU</th>
-				              <td colspan="3">Octa-Core (2.4GHz, 2.0GHz)</td>
+				              <td colspan="3">${product.cpu}</td>
 				            </tr>
 				            <tr>
 				              <th scope="row">메모리</th>
-				              <td colspan="3">6GB RAM / 128GB</td>
+				              <td colspan="3">${product.memory}</td>
 				            </tr>
 				            <tr>
 				              <th scope="row">디스플레이</th>
-				              <td colspan="3">Infinity-U Display</td>
+				              <td colspan="3">${product.display}</td>
 				            </tr>
 				            <tr>
 				              <th scope="row">카메라</th>
-				              <td colspan="3">후면 5,000만 화소 / 전면 : 1,300만 화소</td>
+				              <td colspan="3">${product.camera}</td>
 				            </tr>
 				            <tr>
 				              <th scope="row">기타(옵션)</th>
-				              <td colspan="3">OIS 지원, FM 라디오 지원</td>
+				              <td colspan="3">${product.options}</td>
 				            </tr>
 				         </tbody>
 				       </table>
@@ -426,7 +426,7 @@
 			                         </span>
 			                      </button>
 			                    </div>
-			                    <button class="btns1 md-ripples ripples-light" type="submit" id="mobileJoinBtn" onclick="fMoveOnsaleCmmn();">휴대폰 가입 신청하기
+			                    <button class="btns1 md-ripples ripples-light" type="submit" id="mobileJoinBtn" onclick="checkLogin(event)">휴대폰 가입 신청하기
 							</button>
 			              </div>
 			             </div>
@@ -438,7 +438,7 @@
 		</div>
 		
 		<!-- 할부개월에 따른 결제금액을 계산해서 hidden으로 전송함 -->
-		<input type="hidden" name="uno" id="uno" value="${sessionScope.uno}">
+		<input type="hidden" name="uno" id="uno" value="${sessionScope.user.uno}">
 		<input type="hidden" name="cno" id="cno" value="${product.cno}">
 		<input type="hidden" name="phonecolor" id="colorField" value="">
 		<input type="hidden" name="installment" id="installmentField" value="">
@@ -561,6 +561,36 @@ function updateColor() {
 document.querySelectorAll('input[name="color"]').forEach(function(radio) {
     radio.addEventListener('change', updateColor);  // 색상 선택 시마다 호출
 });
+
+
+// 휴대폰 가입 신청하기 - 로그인여부 체크
+function checkLogin(event) {
+	
+    event.preventDefault();  // 폼 제출 방지
+
+    const session = "${sessionScope.user}";
+    const selectedColor = document.querySelector('input[name="color"]:checked');  //색상 선택 여부 체크
+    const selectedMonth = document.querySelector('input[name="devHalbuMonth"]:checked');    
+    
+    // 로그인 여부 체크
+    if (session !== null && session !== "") {
+    	
+    	//세션 있을 시 - 색상 선택 여부 체크
+    	if(selectedColor !== null) {
+    		// 색상 선택 했을 시 - 할부 선택 여부 체크
+    		if(selectedMonth !== null){
+                // 선택된 값들이 모두 있을 때 폼을 제출
+                event.target.form.submit();
+    		} else 
+    			alert('할부 개월을 선택해주세요.')
+    	} else 
+    		alert('색상을 선택해주세요.')
+    } else {
+        // 세션이 없으면 알림 표시
+        alert('로그인 후 이용 가능한 서비스입니다.');
+        window.location.href = '/user/login';
+    }
+}
 
 
 

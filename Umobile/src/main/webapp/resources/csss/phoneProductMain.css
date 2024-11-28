@@ -182,8 +182,7 @@ float: left;
 /*  상품 리스트  */
 .intro-list-wrap{
 	width: 1700px;
-	height: 1500px;
-	background-color: pink;
+	height: 1900px;
 	margin-top: 70px;
 	margin-left: auto;
 	margin-right: auto;
@@ -227,12 +226,11 @@ float: left;
 .listWrap{
 	width: 100%;
 	height: 100%;
-	background-color: yellow; 
 }
 
 .card-group {
     display: grid;
-    gap: 30px;
+        gap: 120px 0;
         grid-template-columns: 1fr 1fr 1fr;
 }
 

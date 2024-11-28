@@ -15,7 +15,7 @@
 	</insert>
 
 	<!-- 로그인 정보 읽기 -->
-	<select id="read" parameterType="map"
+	<select id="login" parameterType="map"
 		resultType="org.zerock.domain.UserVO">
 		SELECT UNO ,EMAIL ,NAME , PASSWORD , PHONE ,ADDR, regdate,
 		role
@@ -30,8 +30,17 @@
 		WHERE EMAIL = #{email}
 	</select>
 
-	<!-- 회원정보 수정 -->
+	<!-- 회원정보 수정 (비밀번호 미포함 수정시)-->
 	<update id="updateUser">
+		UPDATE users
+		SET
+			name = #{name},
+			addr = #{addr} 
+		WHERE uno = #{uno}
+	</update>
+
+	<!-- 회원정보 수정 (비밀번호 포함해서 수정시)-->
+	<update id="updateUserPw">
 		UPDATE users
 		SET
 			name = #{name},
@@ -39,7 +48,7 @@
 			addr = #{addr} 
 		WHERE uno = #{uno}
 	</update>
-
+	
 	<!-- 회원탈퇴 처리 -->
 	<delete id="deleteUser">
 		DELETE USERS

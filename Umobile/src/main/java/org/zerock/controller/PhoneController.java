@@ -29,14 +29,12 @@ public class PhoneController {
 	private final OrderService orderService;
 	
 	  @GetMapping("/phoneList") 
-	    public String phoneProductPage(Model model) {
+	    public void phoneProductPage(Model model) {
 		  
 			List<ProductVO> products = service.getProduct();
 			model.addAttribute("products", products);
 			
 			log.info("프로덕트 model -> " + model);
-			
-	        return "phone/phoneList"; 
 	    }
 	  
 	    
@@ -55,11 +53,12 @@ public class PhoneController {
 	    		@RequestParam("cno") long cno,
 	    		@RequestParam("phonecolor") String color,
 	    		@RequestParam("installment") String installment ,
-	    		@RequestParam("vatPrice") double vatPrice){
+	    		@RequestParam("vatPrice") double vatPrice,
+	    		Model model){
 
-	    	log.info("uno ---> " + uno);
-	    	log.info("installment ---> " + installment);
-	    	log.info("color ---> " + color);
+	    	log.info("회원고유키 ---> " + uno);
+	    	log.info("할부 ---> " + installment);
+	    	log.info("색상 ---> " + color);
 	    	
 	    	OrderVO orderVO = new OrderVO();
 	    	
@@ -70,10 +69,21 @@ public class PhoneController {
 	    	orderVO.setVatPrice(vatPrice);
 	    	
 	    	log.info("orderVO ---> " + orderVO);
+	    	
+	    	model.addAttribute("msg", "success");
 
 	    	orderService.addPhone(orderVO);
 	    	
 	    	return "redirect:/phone/phoneList";
+	    }
+	    
+	    
+	    @GetMapping("/user/login") 
+	    public String userLogin() {
+			
+	    	log.info("비회원은 가입신청하면 로그인페이지로 보냅니다...");
+	    	
+	    	return "user/login";
 	    }
 	
 }

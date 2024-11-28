@@ -182,7 +182,7 @@
                       <%-- <img src="${pageContext.request.contextPath}/resources/img/gkfdls.png" alt=""> --%>
                    </div>
                    <div class="phone-img">
-                      <img src="${pageContext.request.contextPath}/resources/img/A24_10.png">
+                      <img src="${pageContext.request.contextPath}/resources/phoneImg/${product.cno}.png">
                    </div>
                    <div class="phone-cont">
                       <div class="phone-cont-top">
@@ -221,6 +221,13 @@
 
  
 <%-- <%@ include file="../includes/mainfooter.jsp"%> --%>
+
+  	<!-- URL 파라미터로 전달된 loginMessage 확인 후 알림창 띄우기 -->
+	<c:if test="${param.msg == 'success'}">
+		<script>
+			alert('휴대폰 가입 신청이 완료되었습니다.');
+		</script>
+	</c:if>
 </body>
 </html>
 <script>
