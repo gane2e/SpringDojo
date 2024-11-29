@@ -24,9 +24,7 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public AdminVO login(String username, String password) {
 		
-	    
 	    AdminVO adminVO = mapper.read(username);
-		
 	    
 	    // 관리자 계정이 존재하고, 입력된 비밀번호가 DB 비밀번호와 일치하는지 확인
         if(adminVO != null && adminVO.getPassword().equals(password)) {
@@ -36,7 +34,7 @@ public class AdminServiceImpl implements AdminService{
 		return null; //로그인 실패
 	}
 
-	@Override
+	@Override /* 안쓰는거 */
 	public void insertPhone(ProductVO productVO) {
 		mapper.insertPhone(productVO);
 	}

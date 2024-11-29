@@ -36,6 +36,12 @@ public class ProductServiceImpl implements ProductService {
 		
 		return productVO;
 	}
+
+
+	@Override //선택된 두 상품 리스트 가져오기
+	public List<ProductVO> getSelectedProducts(List<Long> cnoList) {
+		return mapper.getSelectedProducts(cnoList);
+	}
 	
 	
 	

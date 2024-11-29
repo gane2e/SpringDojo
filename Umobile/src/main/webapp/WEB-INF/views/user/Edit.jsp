@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${path}/resources/csss/UserEdit.css" rel="stylesheet" />
-<link href="${path}/resources/csss/index.css" rel="stylesheet" />
+<link href="${path}/resources/csss/subindex.css" rel="stylesheet" />
 </head>
 <body>
 	<!-- 회원정보 수정 완료 -->
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 	</div>
-	<%@ include file="../includes/mainfooter.jsp"%>
+	<%@ include file="../includes/subfooter.jsp"%>
 
 	<script type="text/javascript">
 		// 비밀번호 확인 함수
@@ -102,7 +102,8 @@
 				let confirmUpdate = confirm("회원정보를 수정하시겠습니까?")
 				if (confirmUpdate) {
 					alert("수정이 완료되었습니다.");
-				}
+				} else
+					return false;
 				return true; // 폼 제출O
 			}
 		}

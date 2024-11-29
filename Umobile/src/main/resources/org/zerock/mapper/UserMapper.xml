@@ -5,53 +5,51 @@
 
 <mapper namespace="org.zerock.mapper.UserMapper">
 
+    <!-- 회원가입 처리 -->
+    <insert id="insertUser">
+        INSERT INTO USERS (UNO, EMAIL, NAME, PASSWORD, PHONE, ADDR)
+        VALUES (SEQ_USERS.nextval, #{email}, #{name}, #{password}, #{phone}, #{addr})
+    </insert>
 
-	<!-- 회원가입 처리 -->
-	<insert id="insertUser">
-		insert into users(UNO ,EMAIL ,NAME , PASSWORD , PHONE
-		,ADDR)
-		values(SEQ_USERS.nextval, #{email}, #{name}, #{password},
-		#{phone}, #{addr})
-	</insert>
+    <!-- 로그인 정보 읽기 -->
+    <select id="login" parameterType="map" resultType="org.zerock.domain.UserVO">
+        SELECT UNO, EMAIL, NAME, PASSWORD, PHONE, ADDR, regdate
+        FROM USERS
+        WHERE EMAIL=#{username}
+    </select>
 
-	<!-- 로그인 정보 읽기 -->
-	<select id="login" parameterType="map"
-		resultType="org.zerock.domain.UserVO">
-		SELECT UNO ,EMAIL ,NAME , PASSWORD , PHONE ,ADDR, regdate,
-		role
-		FROM USERS
-		WHERE EMAIL=#{username}
-	</select>
+    <!-- ID 중복 체크 -->
+    <select id="checkEmail" resultType="int">
+        SELECT COUNT(*)
+        FROM USERS
+        WHERE EMAIL = #{email}
+    </select>
 
-	<!-- ID중복체크 -->
-	<select id="checkEmail" resultType="int">
-		SELECT COUNT(*)
-		FROM USERS
-		WHERE EMAIL = #{email}
-	</select>
+    <!-- 회원정보 수정 (비밀번호 미포함) -->
+    <update id="updateUser">
+        UPDATE USERS
+        SET
+            NAME = #{name},
+            ADDR = #{addr},
+            PHONE = #{phone}
+        WHERE UNO = #{uno}
+    </update>
 
-	<!-- 회원정보 수정 (비밀번호 미포함 수정시)-->
-	<update id="updateUser">
-		UPDATE users
-		SET
-			name = #{name},
-			addr = #{addr} 
-		WHERE uno = #{uno}
-	</update>
+    <!-- 회원정보 수정 (비밀번호 포함) -->
+    <update id="updateUserPw">
+        UPDATE USERS
+        SET
+            NAME = #{name},
+            PASSWORD = #{password},
+            ADDR = #{addr},
+            PHONE = #{phone}
+        WHERE UNO = #{uno}
+    </update>
 
-	<!-- 회원정보 수정 (비밀번호 포함해서 수정시)-->
-	<update id="updateUserPw">
-		UPDATE users
-		SET
-			name = #{name},
-			password = #{password}, 
-			addr = #{addr} 
-		WHERE uno = #{uno}
-	</update>
-	
-	<!-- 회원탈퇴 처리 -->
-	<delete id="deleteUser">
-		DELETE USERS
-		WHERE UNO = #{uno}
-	</delete>
+    <!-- 회원탈퇴 처리 -->
+    <delete id="deleteUser">
+        DELETE FROM USERS
+        WHERE UNO = #{uno}
+    </delete>
+
 </mapper>

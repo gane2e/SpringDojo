@@ -20,10 +20,87 @@
     gap: 70px;
     justify-content: space-between;
 }
+/* 상품이미지 시작  */
 
 .box-phone-info .phone-thumb {
     width: 700px;
+    height: 890px;
 }
+
+
+.big-thumb-wrap {
+    width: 650px;
+    height: 600px;
+    margin: 30px;
+    overflow: hidden;
+}
+
+.big-thumb-slide{
+	width: 100%;
+	height: 100%;
+}
+
+.slick-list{
+	width: 100%;
+    height: 100%;
+}
+
+.slick-track{
+	width: 100%;
+	height: 100%;
+}
+
+.slick-slide{
+	width: 100%;
+	height: 100%;
+}
+
+.slick-slide > img{
+	width: 100%;
+	height: 100%;
+}
+
+/* 상품이미지 끝  */
+
+/* 작은 핸드폰 이미지 시작 */
+.big-thumb-wrap+div {
+    height: 150px;
+    overflow: hidden;
+    margin-top: 30px;
+    position: relative;
+    left: -70px;
+}
+
+.phone-thumb .thumb-slide .slick-list {
+    display: block;
+    margin: 0 40px;
+     display: flex;
+    justify-content: center;  /* 수평 가운데 정렬 */
+    align-items: center;
+    padding: 10px;
+}
+
+
+.slick-trackl{
+	opacity: 1;
+	width: 110px;
+	height:105px;
+	transform: translate3d(0px, 0px, 0px); 
+	border: 2px solid black;
+	 display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;  
+}
+
+.slick-trackl > img{
+	width: 100%;
+	height: 100%;
+	pa
+}
+
+/* 작은 핸드폰 이미지 끝 */
+
 
 .box-phone-info .phone-detail {
     width: 810px;

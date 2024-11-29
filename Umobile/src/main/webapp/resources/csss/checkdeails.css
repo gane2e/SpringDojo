@@ -264,6 +264,7 @@ section.notice {
 .board-table tbody th {
   padding-left: 28px;
   padding-right: 14px;
+  width: 200px;
   border-top: 1px solid #e7e7e7;
   text-align: left;
 }
@@ -300,6 +301,24 @@ section.notice {
   transition: all 0.3s;
 }
 
+.btn-t {
+    color: #191919;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -.3px;
+    color: black;
+    width: 90px;
+    height: 35px;
+    background: #f2f4fc;
+    /* padding: 20px 0; */
+    border-radius: 7px;
+    text-align: center;
+    border: none;
+}
+.btn-t:hover{
+    background: #f2f4fc;
+}
 .btn-dark {
   background: #555;
   color: #fff;

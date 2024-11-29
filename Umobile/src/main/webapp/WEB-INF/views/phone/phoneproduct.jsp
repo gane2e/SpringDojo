@@ -198,7 +198,7 @@
                       </div>
                         <div class="phone-cont-bottom">
                             <p class="normal-txt">
-                              월 납부금액
+                              판매가
                               <strong class="txt-vt">
                                 ${product.price}
                               </strong>
@@ -220,14 +220,9 @@
  
 
  
-<%-- <%@ include file="../includes/mainfooter.jsp"%> --%>
+<%@ include file="../includes/subfooter.jsp"%> 
 
-  	<!-- URL 파라미터로 전달된 loginMessage 확인 후 알림창 띄우기 -->
-	<c:if test="${param.msg == 'success'}">
-		<script>
-			alert('휴대폰 가입 신청이 완료되었습니다.');
-		</script>
-	</c:if>
+
 </body>
 </html>
 <script>

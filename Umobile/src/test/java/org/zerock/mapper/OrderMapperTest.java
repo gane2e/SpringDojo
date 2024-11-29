@@ -2,6 +2,8 @@ package org.zerock.mapper;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,12 @@ public class OrderMapperTest {
 		log.info(orderVO);
 		
 		mapper.orderInsert(orderVO);
+	}
+	
+	@Test // 마이페이지 상품 신청내역 테스트
+	public void orderLead() {
+		List<OrderVO> list = mapper.orderRead(38L);
+		list.forEach(lists -> log.info(list));
 	}
 
 }

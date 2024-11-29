@@ -14,5 +14,5 @@ public interface UserService {
 	
 	public boolean updateUserPw(UserVO vo); //회원정보 수정 (비밀번호 포함O)
 	
-	public boolean deleteUserByEmail(long uno);
+	public boolean deleteUserByEmail(long uno); //회원 탈퇴
 }

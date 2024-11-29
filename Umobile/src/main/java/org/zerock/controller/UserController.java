@@ -1,6 +1,7 @@
 package org.zerock.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.domain.OrderVO;
 import org.zerock.domain.UserVO;
+import org.zerock.service.OrderService;
 import org.zerock.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -31,7 +34,8 @@ import oracle.jdbc.proxy.annotation.Post;
 @RequiredArgsConstructor
 public class UserController {
 
-	private final UserService service;
+	private final UserService userService;
+	private final OrderService orderService;
 
 	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -50,7 +54,7 @@ public class UserController {
 
 		log.info("email ----> " + email);
 
-		boolean isEmailExist = service.checkEmail(email);
+		boolean isEmailExist = userService.checkEmail(email);
 
 		return isEmailExist ? "exists" : "not exists";
 	}
@@ -84,11 +88,11 @@ public class UserController {
 
 		log.info("vo -------> " + vo);
 
-		service.register(vo);
+		userService.register(vo);
 
 		log.info("-------------회원가입 test완료------------");
 
-		return "redirect:/user/login"; // 회원가입 성공 후 로그인 페이지로 리다이렉트
+		return "redirect:/";
 	}
 
 	// 로그인 진입
@@ -105,13 +109,12 @@ public class UserController {
 
 		log.info("유저 ID ---> " + username);
 
-		UserVO user = service.login(username, password);
+		UserVO user = userService.login(username, password);
 
 		if (user == null) {
 			model.addAttribute("loginMessage", "아이디 또는 비밀번호를 확인해주세요.");
 			return "user/login"; // 로그인 페이지로 다시 돌아가기
 		} else {
-			model.addAttribute("loginMessage", "success");
 			model.addAttribute("user", user); // 마이페이지에 회원정보 전달용
 			session.setAttribute("user", user); // 로그인 성공 시 세션에 유저정보 저장
 		}
@@ -124,10 +127,21 @@ public class UserController {
 		return "redirect:/";
 	}
 
-	// 마이페이지 진입
+	// 신청내역 조회 241129 추가
+	@GetMapping("/checkdetails")
+	public void checkDetails(HttpServletRequest request, HttpSession session, Model model) {
+
+		UserVO user = (UserVO) request.getSession().getAttribute("user");
+		Long uno = user.getUno();
+
+		List<OrderVO> orderList = orderService.orderRead(uno);
+		model.addAttribute("orderList" , orderList);
+	}
+
+	// 회원정보 수정 진입
 	@GetMapping("/Edit")
 	public String myFage() {
-		
+
 		// test로그
 		log.info("회원정보 수정 진입---------------");
 
@@ -136,12 +150,10 @@ public class UserController {
 
 	// 회원수정 post처리
 	@PostMapping("/update")
-	public String updateUser(UserVO updateUser, BindingResult result, 
-			HttpServletRequest request, HttpSession session) {
+	public String updateUser(UserVO updateUser, BindingResult result, HttpServletRequest request, HttpSession session) {
 
 		String rawPw = "";
 		String encodePw = "";
-		
 
 		// test로그
 		log.info("회원정보 수정한 vo -------> " + updateUser);
@@ -156,31 +168,31 @@ public class UserController {
 		if (result.hasErrors()) {
 			return "user/Edit"; // 에러 발생 시 이동할 페이지
 		}
-		
+
 		/* 비밀번호 미포함해서 수정 시 */
-		if(updateUser.getPassword() == null || updateUser.getPassword() == "") {
-			service.updateUser(updateUser);
+		if (updateUser.getPassword() == null || updateUser.getPassword() == "") {
+			userService.updateUser(updateUser);
+			log.info("비밀번호 포함X 수정");
 		} else {
 			/* 비밀번호 포함 해서 수정 시 */
-			rawPw = updateUser.getPassword(); 
-			encodePw = passwordEncoder.encode(rawPw); //변경한 비밀번호 암호화
+			log.info("비밀번호 포함O 수정");
+			rawPw = updateUser.getPassword();
+			encodePw = passwordEncoder.encode(rawPw); // 변경한 비밀번호 암호화
 			updateUser.setPassword(encodePw);
-			service.updateUserPw(updateUser);
+			userService.updateUserPw(updateUser);
 		}
 
-		 // 세션에 수정된 user 정보를 저장
-	    session.setAttribute("user", updateUser);
-	    
-	    log.info("변경된 유저 session ---> " + session);
-		
+		// 세션에 수정된 user 정보를 저장
+		session.setAttribute("user", updateUser);
+
+		log.info("변경된 유저 session ---> " + session);
+
 		// test로그
 		log.info("-------------회원수정 test완료------------");
 
 		return "redirect:/user/Edit"; // 회원정보 수정 후 로그인 페이지로 리다이렉트
 	}
 
-	
-	
 	// 회원탈퇴 post처리
 	@PostMapping("/delete")
 	public String deleteUser(HttpServletRequest request) {
@@ -192,18 +204,17 @@ public class UserController {
 		log.info("세션에서 가져온 uno 값: " + uno);
 
 		if (uno != null) {
-			boolean isDeleted = service.deleteUserByEmail(uno);
+			boolean isDeleted = userService.deleteUserByEmail(uno);
 
 			if (isDeleted) {
-				// 세션을 무효화하고 로그인 페이지로 리다이렉트
 				request.getSession().invalidate();
-				return "redirect:/user/login"; // 로그인 페이지로 리다이렉트
+				return "redirect:/";
 			} else {
 				return "error"; // 탈퇴 실패 시 오류 페이지로 이동
 			}
 		}
 
-		return "redirect:/user/login"; // 로그인 세션이 없으면 로그인 페이지로 리다이렉트
+		return "redirect:/";
 	}
 
 }

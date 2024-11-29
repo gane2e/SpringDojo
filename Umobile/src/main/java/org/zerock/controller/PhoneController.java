@@ -25,65 +25,68 @@ import lombok.extern.log4j.Log4j;
 @RequiredArgsConstructor
 public class PhoneController {
 
-	private final ProductService service;
+	private final ProductService productService;
 	private final OrderService orderService;
-	
-	  @GetMapping("/phoneproduct") 
-	    public void phoneProductPage(Model model) {
-		  
-			List<ProductVO> products = service.getProduct();
-			model.addAttribute("products", products);
-			
-			log.info("프로덕트 model -> " + model);
-	    }
-	  
-	    
-	    @GetMapping("/PhoneDetail") 
-	    public void phoneProductDetail(@RequestParam("cno") Long cno, Model model) {
-	        
-	    	ProductVO product = service.read(cno);
-	    	
-	    	model.addAttribute("product", product);
-	    	log.info("상품 model 상세정보 ---->" + model);
-	    }
-	    
-	    @PostMapping("/phone/add")
-	    public String phoneAdd(
-	    		@RequestParam("uno") long uno,
-	    		@RequestParam("cno") long cno,
-	    		@RequestParam("phonecolor") String color,
-	    		@RequestParam("installment") String installment ,
-	    		@RequestParam("vatPrice") double vatPrice,
-	    		Model model){
 
-	    	log.info("회원고유키 ---> " + uno);
-	    	log.info("할부 ---> " + installment);
-	    	log.info("색상 ---> " + color);
-	    	
-	    	OrderVO orderVO = new OrderVO();
-	    	
-	    	orderVO.setUno(uno);
-	    	orderVO.setCno(cno);
-	    	orderVO.setColor(color);
-	    	orderVO.setInstallment(installment);
-	    	orderVO.setVatPrice(vatPrice);
-	    	
-	    	log.info("orderVO ---> " + orderVO);
-	    	
-	    	model.addAttribute("msg", "success");
+	@GetMapping("/phoneproduct")
+	public void phoneProductPage(Model model) {
 
-	    	orderService.addPhone(orderVO);
-	    	
-	    	return "redirect:/phone/phoneproduct";
-	    }
-	    
-	    
-	    @GetMapping("/user/login") 
-	    public String userLogin() {
-			
-	    	log.info("비회원은 가입신청하면 로그인페이지로 보냅니다...");
-	    	
-	    	return "user/login";
-	    }
-	
+		List<ProductVO> products = productService.getProduct();
+		model.addAttribute("products", products);
+
+		log.info("프로덕트 model -> " + model);
+	}
+
+	@GetMapping("/PhoneDetail")
+	public void phoneProductDetail(@RequestParam("cno") Long cno, Model model) {
+
+		ProductVO product = productService.read(cno);
+
+		model.addAttribute("product", product);
+		log.info("상품 model 상세정보 ---->" + model);
+	}
+
+	@PostMapping("/phone/add")
+	public String phoneAdd(@RequestParam("uno") long uno, @RequestParam("cno") long cno,
+			@RequestParam("phonecolor") String color, @RequestParam("installment") String installment,
+			@RequestParam("vatPrice") double vatPrice, Model model) {
+
+		log.info("회원고유키 ---> " + uno);
+		log.info("할부 ---> " + installment);
+		log.info("색상 ---> " + color);
+
+		OrderVO orderVO = new OrderVO();
+
+		orderVO.setUno(uno);
+		orderVO.setCno(cno);
+		orderVO.setColor(color);
+		orderVO.setInstallment(installment);
+		orderVO.setVatPrice(vatPrice);
+
+		log.info("orderVO ---> " + orderVO);
+
+		orderService.addPhone(orderVO);
+
+		return "redirect:/phone/phoneproduct";
+	}
+
+	@GetMapping("/user/login")
+	public String userLogin() {
+
+		log.info("비회원은 가입신청하면 로그인페이지로 보냅니다...");
+
+		return "user/login";
+	}
+
+	// 1대 1비교
+	@GetMapping("/comparison")
+	public String phoneComparison(Model model) {
+
+		List<ProductVO> productList = productService.getProduct();
+
+		model.addAttribute("productList", productList);
+
+		return "phone/comparison";
+	}
+
 }

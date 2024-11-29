@@ -64,7 +64,7 @@
 		      <div class="navlog">
 				<a href="#"> <img class="navimg"
 					src="${pageContext.request.contextPath}/resources/img/navlog2.png"
-					id="togoll"> <b class="state" style="display: none;">ON</b> <!-- 로그인 후 상태 -->
+					> <b class="state" id="toggle" style="display: none;">ON</b> <!-- 로그인 후 상태 -->
 				</a>
 				<!--  로그인 전에만 보이는 부분 -->
 		           <div class="navsub"  style="display: none;">
@@ -89,14 +89,14 @@
 	               <!-- 로그인 후에만 보이는 부분  -->
 	               <div class="loginboxs">
 	                   <strong class="info-user">
-	                       <name id="gnbMmbrNm"></name>
+	                       <name id="gnbMmbrNm">${sessionScope.user.name}</name>
 	                       님
-	                       <a href="#" class="member-modify">회원정보수정</a>
+	                       <a href="/user/Edit" class="member-modify">회원정보수정</a>
 	                   </strong>
 	                   <div class="info-func">
 	                       <ul class="func-btn">
 	                          <li>
-	                            <a href="#" class="member-modify2">신청내역 조회</a>
+	                            <a href="/user/checkdetails" class="member-modify2">신청내역 조회</a>
 	                          </li>
 	                          <li class="btnSBMB">
 	                            <a href="/phone/comparison" class="btn-num-auth">견적 비교하기</a>
@@ -121,7 +121,11 @@
 	                       <p class="devcechg-txt">기기변경 상담 1661-0556 (유료)</p>
 	                   </div>
 	                   <div class="logbox-btm">
-	                   <button onclick="" class="btn-text-right-s btn-logout" type="button">로그아웃</button>
+	                   <a href="/logout">
+	                   		<button class="btn-text-right-s btn-logout">로그아웃</button>
+	                   </a>
+	                    	
+	                  
 	                   </div>
 	               </div>
 		    </div>
@@ -170,7 +174,8 @@ $(document).ready(function() {
 
 <!-- 로그인 모달 -->
 $(document).ready(function () {
-    $('#togoll').click(function () {
+	
+    $('#toggle').click(function () {
         if ($('.state').is(':visible')) {
             // 로그인 후 상태: .state가 보이는 경우
             $('.loginboxs').toggle(); // 로그인 박스 토글
@@ -185,23 +190,19 @@ $(document).ready(function () {
 
 
 /* 로그인 전, 후 보여주는   */
-
-/*  function checkLoginStatus() {
-
-  return false; // true는 로그인 상태, false는 비로그인 상태
-}
- */
 document.addEventListener("DOMContentLoaded", function () {
   const navSub = document.querySelector(".navsub");
   const loginBox = document.querySelector(".loginboxs");
   const navImg = document.querySelector(".navlog > a");
   const session = "${sessionScope.user}";
+  const toggle = document.querySelector("#toggle");
 
   if (session !== null && session !== "") {
     // 로그인 상태일 경우
     navSub.style.display = "none";
     loginBox.style.display = "block";
     navImg.style.display = "block";
+    toggle.style.display = "block";
   } else {
     // 비로그인 상태일 경우
     navSub.style.display = "block";

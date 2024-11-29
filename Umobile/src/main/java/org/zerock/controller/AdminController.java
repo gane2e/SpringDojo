@@ -1,13 +1,19 @@
 package org.zerock.controller;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,8 +21,10 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.AdminVO;
+import org.zerock.domain.NoticeVO;
 import org.zerock.domain.ProductVO;
 import org.zerock.service.AdminService;
+import org.zerock.service.NoticeService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -30,12 +38,15 @@ public class AdminController {
 	@Autowired
 	private final AdminService service;
 
-	@GetMapping("/login")
+	@Autowired
+	private final NoticeService noticeService;
+
+	@GetMapping("/adminloginJoin")
 	public String showAdminLoginPage() {
 
 		log.info("addlogin Page.......");
 
-		return "admin/login";
+		return "admin/adminloginJoin";
 
 	}
 
@@ -55,16 +66,7 @@ public class AdminController {
 
 		log.info("로그인한 관리자 정보 ------> " + admin);
 
-		return "redirect:/admin/dashBoard";
-	}
-
-	//
-	@GetMapping("/dashBoard")
-	public String dashBoard() {
-
-		log.info("--- 관리자 페이지 진입 ---");
-
-		return "admin/dashBoard";
+		return "redirect:/admin/Adminmain";
 	}
 
 	@GetMapping("/logout")
@@ -77,36 +79,51 @@ public class AdminController {
 
 		log.info("세션 무효화 완료 -> 로그인 페이지 리다이렉트");
 
-		return "redirect:/admin/login";
+		return "redirect:/admin/adminloginJoin";
 	}
 
-	// 상품 등록페이지 진입
-	@GetMapping("/addProduct")
-	public void addProduct() {
-		log.info("---- 상품 등록 페이지 진입 ----");
+	@GetMapping("/Adminmain") // 공지사항 리스트 (3개) 불러오기
+	public String adminMain(Model model) {
+		List<NoticeVO> noticeList = noticeService.getRecentNotices(3);
+		model.addAttribute("noticeList", noticeList);
+		return "admin/Adminmain"; // JSP 파일 이름
 	}
 
-	// 상품 등록 요청
-	@PostMapping("/addProduct")
-	public String addProduct(@RequestPart MultipartFile thumbnail, ProductVO productVO, RedirectAttributes redirectAttributes) throws IOException {
+	@GetMapping("/read/{nno}") // 공지사항 상세보기
+	public String read(@PathVariable Long nno, Model model) {
+		NoticeVO notice = noticeService.read(nno);
+		model.addAttribute("notice", notice);
+		return "admin/read";
+	}
 
-		log.info("---- 상품 등록 요청 받음 ----");
-		log.info("요청받은 상품 ---> " + productVO);
-		log.info("요청받은 이미지 ---> " + thumbnail.getOriginalFilename());
+	@GetMapping("/modify/{nno}") // 공지 수정
+	public String updateForm(@PathVariable Long nno, Model model) {
+		NoticeVO notice = noticeService.read(nno);
 
-		// 1. 이미지 파일을 byte[]로 변환
-		byte[] thumbnailBytes = thumbnail.getBytes();
+		// LocalDateTime -> String 변환
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		String formattedDate = notice.getRegdate().format(formatter);
 
-		// 2. ProductVO에 이미지 데이터를 저장
-		productVO.setThumbnail(thumbnailBytes);
+		model.addAttribute("notice", notice);
+		model.addAttribute("formattedDate", formattedDate);
 
-		// 3. 상품 정보를 DB에 저장
-		service.insertPhone(productVO);
+		return "admin/modify";
+	}
 
-		// 4. 등록 후 성공 메시지
-		redirectAttributes.addFlashAttribute("message", "상품이 성공적으로 등록되었습니다.");
+	@PostMapping("/modify/{nno}") // 공지 수정 처리
+	public String update(NoticeVO notice) {
+		noticeService.update(notice);
+		return "redirect:/admin/Adminmain";
+	}
 
-		return "redirect:/admin/dashBoard";
+	@DeleteMapping("/delete/{nno}") // 공지 삭제
+	public ResponseEntity<Void> deleteNotice(@PathVariable Long nno) {
+		try {
+			noticeService.delete(nno);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
 	}
 
 }

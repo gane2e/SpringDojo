@@ -14,4 +14,6 @@ public interface ProductMapper {
 	//1개 상품 정보 가져오기(상세페이지 표출용)
 	public ProductVO read(Long cno);
 	
+	// 선택된 두 상품 정보 가져오기
+    List<ProductVO> getSelectedProducts(List<Long> cnoList);
 }

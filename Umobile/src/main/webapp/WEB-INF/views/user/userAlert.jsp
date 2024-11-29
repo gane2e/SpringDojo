@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 필요</title>
+    <!-- 로그인이 필요한 페이지에 이 파일 임포트해주세요. -->
     <script type="text/javascript">
         function showAlert() {
             alert("로그인 후 이용해주세요.");
