@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${path}/resources/csss/subindex.css" rel="stylesheet"/> 
+
 </head>
 <body>
 <!--  footer 시작 -->

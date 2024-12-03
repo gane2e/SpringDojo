@@ -5,7 +5,7 @@
 	height: 1200px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 120px;
+	margin-top: 250px;
 }
 
 .util-width {
@@ -118,14 +118,14 @@ width: 730px;
 
 .btn-group {
     flex: 1;
-    width: 100%;
+    width: 520px;
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
     position: relative;
     top: -40px;
-    left: 120px;
+    left: 270px;
 }
 
 .btns {

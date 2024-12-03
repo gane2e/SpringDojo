@@ -2,6 +2,7 @@ package org.zerock.mapper;
 
 import java.util.Map;
 
+import org.zerock.domain.KakaoVO;
 import org.zerock.domain.UserVO;
 
 public interface UserMapper {
@@ -18,4 +19,5 @@ public interface UserMapper {
 
 	public boolean deleteUser(long uno); //회원 탈퇴
 	
+	public KakaoVO kakao();	
 }

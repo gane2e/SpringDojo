@@ -57,78 +57,64 @@
 		
 		<div class="top-util">
 		    <div class="navlog">
-		    <a href="#">
-		     <img class="navimg" src="${pageContext.request.contextPath}/resources/img/navlog1.png">
-		     </a>
+		     <img class="navimg-t" src="${pageContext.request.contextPath}/resources/img/navlog1.png">
 		    </div>
 		      <div class="navlog">
-				<a href="#"> <img class="navimg"
-					src="${pageContext.request.contextPath}/resources/img/navlog2.png"
-					> <b class="state" id="toggle" style="display: none;">ON</b> <!-- 로그인 후 상태 -->
-				</a>
-				<!--  로그인 전에만 보이는 부분 -->
-		           <div class="navsub"  style="display: none;">
-		               <div class="info-basic">
-              		<button type="button" id="btns" class="top-login" onclick="window.location.href = '/user/login';">
-              		로그인
-              		</button>
-		                <ul class="find-join">
-		                  <li><a href="#">ID/비밀번호찾기</a></li>
-		                  <li><a href="/user/join">회원가입</a></li>
-		                </ul>
-		               </div>
-		              <div class="info-func">
-		                <div class="func-btn">
-		                 <ul>
-		                 <img src="${pageContext.request.contextPath}/resources/img/log-doc.svg">
-		                   <li><a href="#">신청내역조회</a></li>
-		                 </ul>
-		                 </div>
-		              </div>
-	               </div>
-	               <!-- 로그인 후에만 보이는 부분  -->
-	               <div class="loginboxs">
-	                   <strong class="info-user">
-	                       <name id="gnbMmbrNm">${sessionScope.user.name}</name>
-	                       님
-	                       <a href="/user/Edit" class="member-modify">회원정보수정</a>
-	                   </strong>
-	                   <div class="info-func">
-	                       <ul class="func-btn">
-	                          <li>
-	                            <a href="/user/checkdetails" class="member-modify2">신청내역 조회</a>
-	                          </li>
-	                          <li class="btnSBMB">
-	                            <a href="/phone/comparison" class="btn-num-auth">견적 비교하기</a>
-	                          </li>
-	                       </ul>
-	                       
-	                       <div class="guide-box pint-bx">
-	                           <a href="#">
-	                            <p>
-	                              <strong>포인트</strong>
-	                              <span id="gnbPoint">0P</span>
-	                            </p>
-	                           </a>
-	                           <a href="#">
-	                              <p id="ucashArea2">
-	                                <strong>U폰 캐시</strong>
-	                                <span id="gnbUcash">0C</span>
-	                              </p>
-	                           </a>
-	                           <p class="fir" > 친구추천하고 특별한 혜택을 받으세요</p>
-	                       </div>
-	                       <p class="devcechg-txt">기기변경 상담 1661-0556 (유료)</p>
-	                   </div>
-	                   <div class="logbox-btm">
-	                   <a href="/logout">
-	                   		<button class="btn-text-right-s btn-logout">로그아웃</button>
-	                   </a>
-	                    	
-	                  
-	                   </div>
-	               </div>
-		    </div>
+          <a href="#" id="profileIcon"> <!-- 아이콘 클릭 시 모달 활성화 -->
+        <img class="navimg" src="${pageContext.request.contextPath}/resources/img/navlog2.png">
+          <b class="state" id="toggle" style="display: none;">ON</b>
+        </a>
+    <!-- 로그인 전 모달 -->
+    <div class="navsub" style="display: none;"> <!-- 기본 숨김 -->
+        <div class="info-basic">
+            <button type="button" id="btnLogin" class="top-login" onclick="window.location.href = '/user/login';">로그인</button>
+            <ul class="find-join">
+                <li><a href="#">ID/비밀번호찾기</a></li>
+                <li><a href="/user/join">회원가입</a></li>
+            </ul>
+        </div>
+        <div class="info-func">
+            <ul>
+                <img src="${pageContext.request.contextPath}/resources/img/log-doc.svg">
+                <li class="sodurwhgml"><a href="#">신청내역조회</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 로그인 후 모달 -->
+    <div class="loginboxs" style="display: none;"> <!-- 기본 숨김 -->
+        <strong class="info-user">
+            <span id="userName">${sessionScope.user.name}</span> 님
+            <a href="/user/Edit" class="member-modify">회원정보수정</a>
+        </strong>
+        <div class="info-func">
+						<ul class="func-btn">
+							<li><a href="/user/checkdetails" class="member-modify2">신청내역
+									조회</a></li>
+							<li class="btnSBMB"><a href="/phone/comparison"
+								class="btn-num-auth">견적 비교하기</a></li>
+						</ul>
+
+						<div class="guide-box pint-bx">
+							<a href="#">
+								<p>
+									<strong>포인트</strong> <span id="gnbPoint">0P</span>
+								</p>
+							</a> <a href="#">
+								<p id="ucashArea2">
+									<strong>U폰 캐시</strong> <span id="gnbUcash">0C</span>
+								</p>
+							</a>
+							<p class="fir">친구추천하고 특별한 혜택을 받으세요</p>
+						</div>
+						<p class="devcechg-txt">기기변경 상담 1661-0556 (유료)</p>
+					</div>
+        <div class="logbox-btm">
+            <a href="/logout">
+                <button class="btn-text-right-s btn-logout">로그아웃</button>
+            </a>
+        </div>
+    </div>
+</div>
 		      <div class="navlog">
 		       <a href="#">
 		       <img class="navimg" src="${pageContext.request.contextPath}/resources/img/navlog3.png">
@@ -174,14 +160,24 @@ $(document).ready(function() {
 
 <!-- 로그인 모달 -->
 $(document).ready(function () {
-	
-    $('#toggle').click(function () {
-        if ($('.state').is(':visible')) {
-            // 로그인 후 상태: .state가 보이는 경우
-            $('.loginboxs').toggle(); // 로그인 박스 토글
+    // 기본 상태 숨김
+    $(".navsub, .loginboxs").hide();
+
+    // 아이콘 클릭 이벤트
+    $("#profileIcon").click(function () {
+        if ($(".state").is(":visible")) {
+            // 로그인 후 상태
+            $(".loginboxs").toggle();
         } else {
-            // 로그인 전 상태: .state가 보이지 않는 경우
-            $('.navsub').toggle(); // 네비게이션 메뉴 토글
+            // 로그인 전 상태
+            $(".navsub").toggle();
+        }
+    });
+
+    // 화면 밖 클릭 시 모달 닫기
+    $(document).click(function (e) {
+        if (!$(e.target).closest("#profileIcon, .navsub, .loginboxs").length) {
+            $(".navsub, .loginboxs").hide();
         }
     });
 });
@@ -201,17 +197,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // 로그인 상태일 경우
     navSub.style.display = "none";
     loginBox.style.display = "block";
-    navImg.style.display = "block";
     toggle.style.display = "block";
   } else {
     // 비로그인 상태일 경우
-    navSub.style.display = "block";
+    navSub.style.display = "none"; // 모달창 숨김
     loginBox.style.display = "none";
-    navImg.style.display = "none";
+    // 이미지는 그대로 보이게 함
+    toggle.style.display = "none";
   }
 });
-
-/* 로그인 전, 후 보여주는   */
 
 
 </script>

@@ -86,15 +86,46 @@
 	height: 100%;
 }
 
- .checked-item-btn {
-    display: inline-block;
-    width: 35px;
+ 
+
+.btn-t {
+    color: #191919;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -.3px;
+    color: black;
+    width: 90px;
     height: 35px;
-    border-radius: 2px;
-    background: #141414;
-    margin-right: 15px;
-    position: relative;
-    left: -320px;
+    background: #f2f4fc;
+    /* padding: 20px 0; */
+    border-radius: 7px;
+    text-align: center;
+    border: none;
+}
+
+.btn-t:hover{
+	 background: #f2f4fc;
+}
+
+.btn-s {
+    color: #191919;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -.3px;
+    color: black;
+    width: 90px;
+    height: 35px;
+    background: #f2f4fc;
+    /* padding: 20px 0; */
+    border-radius: 7px;
+    text-align: center;
+    border: none;
+}
+
+.btn-s:hover{
+	 background: #f2f4fc;
 }
 
 .check_wrap{
@@ -254,6 +285,7 @@ section.notice {
 
 .board-table th, .board-table td {
   padding: 14px 0;
+  width:150px;
 }
 
 .board-table tbody td {
@@ -301,24 +333,6 @@ section.notice {
   transition: all 0.3s;
 }
 
-.btn-t {
-    color: #191919;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: -.3px;
-    color: black;
-    width: 90px;
-    height: 35px;
-    background: #f2f4fc;
-    /* padding: 20px 0; */
-    border-radius: 7px;
-    text-align: center;
-    border: none;
-}
-.btn-t:hover{
-    background: #f2f4fc;
-}
 .btn-dark {
   background: #555;
   color: #fff;

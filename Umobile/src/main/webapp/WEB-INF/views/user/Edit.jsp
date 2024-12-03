@@ -9,9 +9,6 @@
 <link href="${path}/resources/csss/subindex.css" rel="stylesheet" />
 </head>
 <body>
-	<!-- 회원정보 수정 완료 -->
-	<!-- 로그인이 필요한 페이지에 임포트해주세요. -->
-	<%@ include file="userAlert.jsp"%>
 	<%@ include file="../includes/header.jsp"%>
 	<div class="Edit-wrap">
 		<div class="sub-conts join util-width find-finish" id="mainUserUpdate">

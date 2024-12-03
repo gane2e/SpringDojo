@@ -182,13 +182,13 @@
                       <%-- <img src="${pageContext.request.contextPath}/resources/img/gkfdls.png" alt=""> --%>
                    </div>
                    <div class="phone-img">
-                      <img src="${pageContext.request.contextPath}/resources/phoneImg/${product.cno}.png">
+                      <img src="/upload/${product.image_Path}">
                    </div>
                    <div class="phone-cont">
                       <div class="phone-cont-top">
                          <h3 class="main-txt">
                            <span class="chip">
-                              <img src="${pageContext.request.contextPath}/resources/img/chip-lte.png"> 
+                               <img src="${pageContext.request.contextPath}/resources/img/chip-lte.png"> 
                            </span>
                         	${product.phone_Name}
                          </h3>

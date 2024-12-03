@@ -19,6 +19,8 @@ public interface NoticeService {
 
 	// 검색 기능 추가
 	List<NoticeVO> searchPosts(String keyword, int offset, int limit);
+    
+	int countSearchPosts(String keyword);
 
 	// 모든 공지사항 가져오기
 	List<NoticeVO> getAll();
@@ -26,8 +28,9 @@ public interface NoticeService {
 	// 페이징을 위한 공지사항 가져오기
 	List<NoticeVO> getAllWithPaging(int offset, int limit);
 	
-	
     int getTotalCount();
+    
+    int countAllPosts();
     
     List<NoticeVO> getRecentNotices(int limit);
 }

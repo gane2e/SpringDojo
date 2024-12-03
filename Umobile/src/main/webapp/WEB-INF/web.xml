@@ -27,6 +27,11 @@
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+
+		<multipart-config>
+			<max-file-size>31457280</max-file-size>   <!-- 30mb -->
+			<max-request-size>1004857600</max-request-size>  <!-- 100mb -->
+		</multipart-config>
 	</servlet>
 
 	<servlet-mapping>
@@ -53,5 +58,16 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<!-- 한글설정 END -->
+
+	<!-- MultipartFilter 설정 -->
+	<filter>
+		<filter-name>MultipartFilter</filter-name>
+		<filter-class>org.springframework.web.multipart.support.MultipartFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>MultipartFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 </web-app>

@@ -2,6 +2,7 @@ package org.zerock.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.zerock.domain.OrderVO;
 
 public interface OrderMapper {
@@ -15,4 +16,9 @@ public interface OrderMapper {
 	// 모든 주문내역 조회 (관리자 페이지)
 	public List<OrderVO> orderList();
 
+	// 최근 휴대폰 신청내역
+	public List<OrderVO> fetchRecentOrders(@Param("limit") int limit);
+
+	//회원 휴대폰 가입신청 취소처리
+	public void cancel(long vno);
 }

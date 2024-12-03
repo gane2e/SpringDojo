@@ -14,14 +14,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.domain.NoticeVO;
 import org.zerock.domain.OrderVO;
 import org.zerock.domain.UserVO;
+import org.zerock.service.NoticeService;
 import org.zerock.service.OrderService;
+import org.zerock.service.ReviewService;
 import org.zerock.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -35,7 +39,9 @@ import oracle.jdbc.proxy.annotation.Post;
 public class UserController {
 
 	private final UserService userService;
+	private final NoticeService noticeService;
 	private final OrderService orderService;
+	private final ReviewService reviewService;
 
 	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -49,7 +55,7 @@ public class UserController {
 
 	// ID 중복체크
 	@PostMapping("/user/checkEmail")
-	@ResponseBody // view에 요청응답하려면 필수로넣읍시다..
+	@ResponseBody 
 	public String checkEmail(@RequestParam("email") String email) {
 
 		log.info("email ----> " + email);
@@ -92,7 +98,7 @@ public class UserController {
 
 		log.info("-------------회원가입 test완료------------");
 
-		return "redirect:/";
+		return "redirect:/user/login";
 	}
 
 	// 로그인 진입
@@ -119,6 +125,7 @@ public class UserController {
 			session.setAttribute("user", user); // 로그인 성공 시 세션에 유저정보 저장
 		}
 
+		
 		log.info("-------로그인 완료-----------");
 		log.info("로그인한 유저 세션값 ---> " + session);
 		log.info("로그인한 유저 vo값 ---> " + user);
@@ -129,22 +136,37 @@ public class UserController {
 
 	// 신청내역 조회 241129 추가
 	@GetMapping("/checkdetails")
-	public void checkDetails(HttpServletRequest request, HttpSession session, Model model) {
+	public String checkDetails(HttpServletRequest request, HttpSession session, Model model) {
 
 		UserVO user = (UserVO) request.getSession().getAttribute("user");
-		Long uno = user.getUno();
-
-		List<OrderVO> orderList = orderService.orderRead(uno);
-		model.addAttribute("orderList" , orderList);
+		
+		if(user != null) {
+			long uno = user.getUno();
+			List<OrderVO> orderList = orderService.orderRead(uno);
+			model.addAttribute("orderList" , orderList);
+			log.info("orderList ->" + orderList);
+			return "user/checkdetails";
+		} else 
+			return "user/login";
 	}
+	
+	@PostMapping("/cancel")
+	public String cancle(@RequestParam("vno") Long vno, RedirectAttributes redirectAttributes) {
+		try {
+			orderService.cancel(vno);
+			redirectAttributes.addFlashAttribute("message", "가입신청 취소가 완료되었습니다.");
+		} catch (Exception e) {
+			e.printStackTrace();
+			redirectAttributes.addFlashAttribute("error", "취소 오류입니다. 관리자에게 문의하세요.");
+		}
+		  return "redirect:/user/checkdetails"; 
+		}
+	
 
 	// 회원정보 수정 진입
 	@GetMapping("/Edit")
 	public String myFage() {
-
-		// test로그
 		log.info("회원정보 수정 진입---------------");
-
 		return "user/Edit";
 	}
 
@@ -216,5 +238,48 @@ public class UserController {
 
 		return "redirect:/";
 	}
+	
+	
+	/* 공지사항 */
+	// 공지사항 리스트
+    @GetMapping("/notice")
+    public String userNotice(@RequestParam(defaultValue = "1") int page, Model model) {
+        int limit = 10; // 페이지당 항목 수
+        int offset = (page - 1) * limit;
+        List<NoticeVO> noticeList = noticeService.getAllWithPaging(offset, limit);
+        int totalResults = noticeService.countAllPosts();
+        int totalPages = (int) Math.ceil((double) totalResults / limit);
+        model.addAttribute("noticeList", noticeList);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", totalPages);
+        return "user/notice";
+    }
+
+    // 공지사항 검색
+    @GetMapping("/notice/search")
+    public String search(@RequestParam("keyword") String keyword,
+                         @RequestParam(defaultValue = "1") int page, Model model) {
+        int limit = 10;
+        int offset = (page - 1) * limit;
+        List<NoticeVO> searchResults = noticeService.searchPosts(keyword, offset, limit);
+        int totalResults = noticeService.countSearchPosts(keyword);
+        int totalPages = (int) Math.ceil((double) totalResults / limit);
+        model.addAttribute("noticeList", searchResults);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("keyword", keyword);
+        return "user/notice";
+    }
+
+    // 공지사항 상세 보기
+    @GetMapping("/notice/{nno:\\d+}")
+    public String readNotice(@PathVariable Long nno, Model model) {
+        NoticeVO notice = noticeService.read(nno);
+        model.addAttribute("notice", notice);
+        return "user/usernoticeread";
+    }
+
+	
+	
 
 }

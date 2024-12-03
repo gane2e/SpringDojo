@@ -1,5 +1,6 @@
 package org.zerock.controller;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -13,8 +14,11 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.zerock.domain.OrderVO;
 import org.zerock.domain.ProductVO;
+import org.zerock.domain.ReviewVO;
+import org.zerock.domain.UserVO;
 import org.zerock.service.OrderService;
 import org.zerock.service.ProductService;
+import org.zerock.service.ReviewService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -27,33 +31,35 @@ public class PhoneController {
 
 	private final ProductService productService;
 	private final OrderService orderService;
+	private final ReviewService reviewService;
 
+	// 휴대폰 상품 페이지
 	@GetMapping("/phoneproduct")
 	public void phoneProductPage(Model model) {
-
 		List<ProductVO> products = productService.getProduct();
+		products.sort(Comparator.comparing(ProductVO::getRegdate).reversed());
 		model.addAttribute("products", products);
-
-		log.info("프로덕트 model -> " + model);
 	}
 
+	// 휴대폰 상세 페이지 (상세 정보 + 리뷰 데이터 통합)
 	@GetMapping("/PhoneDetail")
-	public void phoneProductDetail(@RequestParam("cno") Long cno, Model model) {
+	public String phoneProductDetail(@RequestParam("cno") Long cno, Model model) {
 
 		ProductVO product = productService.read(cno);
-
+		List<ReviewVO> reviews = reviewService.getReviewsByPhone(cno);
 		model.addAttribute("product", product);
-		log.info("상품 model 상세정보 ---->" + model);
+		model.addAttribute("reviews", reviews);
+		return "phone/PhoneDetail";
 	}
 
+	// 휴대폰 신청처리
 	@PostMapping("/phone/add")
-	public String phoneAdd(@RequestParam("uno") long uno, @RequestParam("cno") long cno,
-			@RequestParam("phonecolor") String color, @RequestParam("installment") String installment,
-			@RequestParam("vatPrice") double vatPrice, Model model) {
-
-		log.info("회원고유키 ---> " + uno);
-		log.info("할부 ---> " + installment);
-		log.info("색상 ---> " + color);
+	public String phoneAdd(@RequestParam("uno") long uno, 
+			@RequestParam("cno") long cno,
+			@RequestParam("phonecolor") String color, 
+			@RequestParam("installment") String installment,
+			@RequestParam("vatPrice") double vatPrice, 
+			Model model) {
 
 		OrderVO orderVO = new OrderVO();
 
@@ -63,29 +69,22 @@ public class PhoneController {
 		orderVO.setInstallment(installment);
 		orderVO.setVatPrice(vatPrice);
 
-		log.info("orderVO ---> " + orderVO);
-
 		orderService.addPhone(orderVO);
 
-		return "redirect:/phone/phoneproduct";
+		return "redirect:/user/checkdetails";
 	}
 
+	// 사용자 로그인 페이지(비회원이 신청했을 시 이동)
 	@GetMapping("/user/login")
 	public String userLogin() {
-
-		log.info("비회원은 가입신청하면 로그인페이지로 보냅니다...");
-
 		return "user/login";
 	}
 
 	// 1대 1비교
 	@GetMapping("/comparison")
 	public String phoneComparison(Model model) {
-
 		List<ProductVO> productList = productService.getProduct();
-
 		model.addAttribute("productList", productList);
-
 		return "phone/comparison";
 	}
 

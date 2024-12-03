@@ -2,6 +2,8 @@ package org.zerock.domain;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
@@ -23,13 +25,18 @@ public class ProductVO {
 	private String color; // 색상
 	private String cpu; // CPU 정보
 	private String options; // 기타 옵션
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date release_Date; // 출시일
 	private String os; // 운영체제 (OS)
 
-	private byte[] thumbnail; // 상품 썸네일 (이미지 파일 저장, byte 배열)
+	/* 241130 썸네일제거, 이미지경로추가 */
+	private String image_Path; //이미지경로
 	private String description1; // 상품설명1
 	private String description2; // 상품설명2
 
 	private String security; 
 	private String waterproof;
+	
+	private Date regdate;
 }

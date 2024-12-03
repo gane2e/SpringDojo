@@ -6,9 +6,13 @@ body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;  /* 전체 화면 너비 */
   font-family: 'Noto Sans KR', sans-serif;
 }
+
+Button, a{
+	cursor: pointer;
+}
+
 
 *{
     margin: 0;
@@ -25,27 +29,53 @@ a{
     color: black;
 }
 
-
-
-
-#header{
-	height: 120px;
+#wrap{
+	position: relative;
 	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
+	height: 100%;
 	
 }
 
-.logbox{
-	height: 100px;
-	width: 250px;
-	margin: 10px;
+#header {
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid #ddd;
 }
 
+ #header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    min-width: 720px;
+    min-height: 80px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 10px -8px transparent;
+    margin-bottom: 50px;
+}
+
+/* #header{
+	height: 120px;
+	min-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+} */
+
 .logbox > a> .logimg{
-	width: 100%;
-	height: 100%
+
+	background-size: cover;
+	position: relative;
+	top: 25px;
+}
+
+
+.submenuimg > a > img{
+	background-size: cover;
 }
 
 .col-md-10{
@@ -105,8 +135,7 @@ width: 1990px;
 }
 
 .submenuimg > a > img{
-	width: 100%;
-	height: 100%;
+	background-size: cover;
 }
 
 
@@ -154,6 +183,10 @@ width: 1990px;
 
 .submeul-1 {
     margin-top: 20px;
+}
+
+.avimg-t{
+	width: 50px;
 }
 
 
@@ -205,7 +238,7 @@ width: 1990px;
 	padding: 30px;
 }
 
-#btns{
+#btnLogin{
   color: #191919;
     font-size: 30px;
     font-weight: 600;
@@ -217,6 +250,11 @@ width: 1990px;
     padding: 20px 0;
     border-radius: 7px;
     text-align: center;
+}
+
+.navimg-t{
+	width: 50px;
+	height: 100%;
 }
 
 .find-join{
@@ -235,6 +273,12 @@ margin-top: 30px;
     line-height: normal;
     letter-spacing: -.3px;
     	
+}
+
+.sodurwhgml{
+	position: relative;
+    top: -26px;
+    left: 30px;
 }
 
 .info-basic .find-join>li+li {
@@ -284,6 +328,7 @@ margin-top: 30px;
     color: #fff;
     font-size: 12px;
     text-align: left;
+    width: 20px
 }
 
 .loginboxs{
@@ -524,6 +569,7 @@ margin-top: 30px;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
+    margin-top: 150px;
 }
 
 .slider {
@@ -690,6 +736,8 @@ button:hover {
     margin-left: auto;
 	margin-right: auto;
 	margin-top: 90px;
+	position: relative;
+    left: 70px;
 }
 .sec-tit{
 	display: block;
@@ -797,6 +845,7 @@ button:hover {
 	margin: 0 0 0 30px;
 	border-radius: 20px;
 	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	  transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
 
 .fee_list:hover{
@@ -1131,16 +1180,17 @@ left: -100px;
   width: 100%;
   height: 500px;
   margin: 0 auto;
-  background-color: yellow;
   margin-top: 60px;
   padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* 제목 영역 */
 .subscript-tit {
   width: 80%;
   height: 100px;
   margin: 0 auto;
-  background-color: red;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1158,28 +1208,38 @@ left: -100px;
   border: none;
   cursor: pointer;
 }
+/* 제목 영역 끝 */
 
-.slider-l {
-  width: 100%;
-  height: 100%;
+/* 슬라이드 시작  */
+.slider-l{
+	width: 100%;
+	height: 100%;
 }
 
-.subsBannerArea, .subsBannerArea2 {
-  overflow: hidden;
+ .subsBannerArea {
+  /* overflow: hidden; */ /* 컨테이너 영역 외부 숨김 */
   position: relative;
   width: 100%;
-  background-color: blue;
 }
 
 .subscription-box {
   display: flex;
-  gap: 30px;
+  gap: 30px; /* 아이템 간 간격 */
   width: max-content;
-  transition: transform 0.5s ease-in-out;
+}
+
+/* 첫 번째 슬라이드 애니메이션 (왼쪽으로 이동) */
+.subsBannerArea .subscription-box {
+  animation: slide-left 20s linear infinite; /* 첫 번째 슬라이드는 왼쪽으로 애니메이션 */
+}
+
+/* 두 번째 슬라이드 애니메이션 (오른쪽으로 이동) */
+.subsBannerArea2 .subscription-box {
+  animation: slide-right 20s linear infinite; /* 두 번째 슬라이드는 오른쪽으로 애니메이션 */
 }
 
 .MAIN {
-  flex-shrink: 0;
+  flex-shrink: 0; /* 슬라이드 아이템 크기 고정 */
   width: 350px;
   height: 170px;
   background-color: white;
@@ -1189,10 +1249,30 @@ left: -100px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.MAIN img {
+.MAIN > .king > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 슬라이드 왼쪽으로 이동 */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0); /* 시작 위치 */
+  }
+  100% {
+    transform: translateX(-100vw); /* 전체 화면 너비만큼 이동 */
+  }
+}
+
+/* 슬라이드 오른쪽으로 이동 */
+@keyframes slide-right {
+  0% {
+    transform: translateX(0); /* 시작 위치 */
+  }
+  100% {
+    transform: translateX(100vw); /* 전체 화면 너비만큼 이동 */
+  }
 }
 /*  sec-or 시작*/
 

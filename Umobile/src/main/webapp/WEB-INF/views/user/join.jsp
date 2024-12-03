@@ -23,6 +23,7 @@
 				<form action="doJoin" method="post" id="signupForm">
 					<div id="divid" class="box-input">
 						<div class="input-wrap">
+							<div>이메일(아이디)를 입력해주세요.</div>
 							<input id="email" type="text" name="email"
 								placeholder="이메일(아이디)를 입력해주세요" class="input-default is-delete"
 								title="email">
@@ -30,25 +31,31 @@
 								onclick="checkEmailDuplication()">중복확인</button>
 						</div>
 						<div class="input-wrap">
+							<div>이름을 입력해주세요.</div>
 							<input id="name" type="text" name="name" placeholder="이름을 입력하세요"
 								class="input-default is-delete" title="name">
 						</div>
 						<div class="input-wrap">
-							<input id="password" type="password" name="password"
-								placeholder="비밀번호 를 입력하세요" class="input-default is-delete"
-								title="password">
+							<div>비밀번호 대문자, 소문자, 숫자, 특수문자 중 3종류 이상 조합하여 9~20자리를 입력해주세요.</div>
+							<input id="passwordInput" type="password" name="password"
+								placeholder="비밀번호 대문자, 소문자, 숫자, 특수문자 중 3종류 이상 조합하여 9~20자리를 입력해주세요."
+								class="input-default is-delete" title="password"> <span
+								id="passwordStrength"></span>
 						</div>
 						<div class="input-wrap">
+							<div>비밀번호 확인을 위해 한번 더 입력해주세요.</div>
 							<input id="passwordConfirm" type="password"
 								name="passwordConfirm" placeholder="비밀번호 를 한번 더 입력하세요"
 								class="input-default is-delete" title="password">
 						</div>
 						<div class="input-wrap">
+							<div>휴대폰 번호를 입력해주세요.</div>
 							<input id="phone" type="text" name="phone"
-								placeholder="핸드폰 번호 를 입력하세요" class="input-default is-delete"
+								placeholder="휴대폰 번호를 입력하세요" class="input-default is-delete"
 								title="phone" oninput="formatPhoneNumber(this)">
 						</div>
 						<div class="input-wrap">
+							<div>주소를 입력해주세요.</div>
 							<input id="addr" type="text" name="addr" placeholder="주소 를 입력하세요"
 								class="input-default is-delete" title="addr">
 						</div>
@@ -60,111 +67,135 @@
 		</div>
 	</div>
 	<%@ include file="../includes/subfooter.jsp"%>
+	<script>
+		function signupFormSubmit() {
+			// 폼 요소 가져오기
+			const email = document.getElementById('email').value.trim();
+			const name = document.getElementById('name').value.trim();
+			const password = document.getElementById('passwordInput').value.trim();
+			const passwordConfirm = document.getElementById('passwordConfirm').value
+					.trim();
+			const phone = document.getElementById('phone').value.trim();
+			const addr = document.getElementById('addr').value.trim();
+
+			// 유효성 검사
+			if (!validateEmail(email)) {
+				alert('유효한 이메일 주소를 입력하세요.');
+				return;
+			}
+
+			if (name === '') {
+				alert('이름을 입력하세요.');
+				return;
+			}
+
+			if (password.length < 8) {
+				alert('비밀번호는 최소 8자 이상이어야 합니다.');
+				return;
+			}
+
+			// 비밀번호와 비밀번호 확인 값이 일치하지 않으면 알림창을 띄움
+			if (password !== passwordConfirm) {
+				alert("비밀번호가 일치하지 않습니다.");
+				document.getElementById('password').value = ''; // 비밀번호 입력란 값 비우기
+				document.getElementById('passwordConfirm').value = ''; // 비밀번호 확인란 값 비우기
+				return;
+			}
+
+			if (addr === '') {
+				alert('주소를 입력하세요.');
+				return;
+			}
+
+			// 유효성 검사를 모두 통과하면 폼 제출
+			alert('회원가입이 완료되었습니다.\n로그인 페이지로 이동합니다.');
+			document.getElementById('signupForm').submit(); // 폼을 수동으로 제출
+		}
+
+		function validateEmail(email) {
+			const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return regex.test(email);
+		}
+
+		function validatePhone(phone) {
+			const regex = /^\d{12,13}$/; // 10~11자리 숫자만 허용
+			return regex.test(phone);
+		}
+
+		function checkEmailDuplication() {
+			let email = $("input[name='email']").val();
+			if (email) {
+				$
+						.ajax({
+							url : "/user/checkEmail", // 이메일 중복 체크를 위한 URL
+							type : "POST",
+							data : {
+								email : email
+							},
+							contentType : "application/x-www-form-urlencoded; charset=UTF-8", // 이 부분 추가
+							success : function(response) {
+								if (response == "exists") {
+									alert("이미 존재하는 아이디입니다.");
+									$("input[name='email']").val(''); //아이디칸 비움
+								} else {
+									alert("사용 가능한 아이디입니다.");
+								}
+							},
+							error : function(xhr, status, error) {
+								console.log("AJAX error: " + status + ", "
+										+ error); // 에러 확인
+								alert("아이디 중복 체크 실패");
+							}
+						});
+			} else {
+				alert("아이디를 입력해주세요.");
+			}
+		}
+
+		// 전화번호 하이픈 자동 포맷 함수
+		function formatPhoneNumber(input) {
+			let phoneNumber = input.value.replace(/[^\d]/g, ''); // 숫자만 남기고 나머지 문자 제거
+
+			// 전화번호 길이에 따라 하이픈 추가
+			if (phoneNumber.length < 4) {
+				input.value = phoneNumber;
+			} else if (phoneNumber.length < 7) {
+				input.value = phoneNumber.slice(0, 3) + '-'
+						+ phoneNumber.slice(3);
+			} else if (phoneNumber.length < 11) {
+				input.value = phoneNumber.slice(0, 3) + '-'
+						+ phoneNumber.slice(3, 6) + '-' + phoneNumber.slice(6);
+			} else {
+				input.value = phoneNumber.slice(0, 3) + '-'
+						+ phoneNumber.slice(3, 7) + '-'
+						+ phoneNumber.slice(7, 11);
+			}
+		}
+		
+		
+		   document.getElementById('passwordInput').addEventListener('input', function() {
+	            var password = this.value;
+	            var strengthText = '';
+	            var strengthColor = 'red';
+	            if (password.length >= 8) {
+	                strengthText = '약함';
+	                if (/[a-zA-Z]/.test(password) && /[0-9]/.test(password)) {
+	                    strengthText = '보통';
+	                    strengthColor = 'orange';
+	                    if (/[^a-zA-Z0-9]/.test(password)) {
+	                        strengthText = '강함';
+	                        strengthColor = 'green';
+	                    }
+	                }
+	            } else {
+	                strengthText = '비밀번호를 9자리 이상 입력하세요.';
+	            }
+	            document.getElementById('passwordStrength').textContent = strengthText;
+	            document.getElementById('passwordStrength').style.color = strengthColor;
+	        });
+	</script>
 </body>
 </html>
-<script>
-	function signupFormSubmit() {
-		// 폼 요소 가져오기
-		const email = document.getElementById('email').value.trim();
-		const name = document.getElementById('name').value.trim();
-		const password = document.getElementById('password').value.trim();
-		const passwordConfirm = document.getElementById('passwordConfirm').value
-				.trim();
-		const phone = document.getElementById('phone').value.trim();
-		const addr = document.getElementById('addr').value.trim();
 
-		// 유효성 검사
-		if (!validateEmail(email)) {
-			alert('유효한 이메일 주소를 입력하세요.');
-			return;
-		}
 
-		if (name === '') {
-			alert('이름을 입력하세요.');
-			return;
-		}
 
-		if (password.length < 8) {
-			alert('비밀번호는 최소 8자 이상이어야 합니다.');
-			return;
-		}
-
-		// 비밀번호와 비밀번호 확인 값이 일치하지 않으면 알림창을 띄움
-		if (password !== passwordConfirm) {
-			alert("비밀번호가 일치하지 않습니다.");
-			document.getElementById('password').value = ''; // 비밀번호 입력란 값 비우기
-			document.getElementById('passwordConfirm').value = ''; // 비밀번호 확인란 값 비우기
-			return; 
-		}
-/* 		if (!validatePhone(phone)) {
-			alert('유효한 휴대폰 번호를 입력하세요.');
-			return;
-		} */
-
-		if (addr === '') {
-			alert('주소를 입력하세요.');
-			return;
-		}
-
-		// 유효성 검사를 모두 통과하면 폼 제출
-		alert('회원가입이 완료되었습니다.');
-		document.getElementById('signupForm').submit(); // 폼을 수동으로 제출
-	}
-
-	function validateEmail(email) {
-		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return regex.test(email);
-	}
-
-	function validatePhone(phone) {
-		const regex = /^\d{12,13}$/; // 10~11자리 숫자만 허용
-		return regex.test(phone);
-	}
-
-	function checkEmailDuplication() {
-		let email = $("input[name='email']").val();
-		if (email) {
-			$
-					.ajax({
-						url : "/user/checkEmail", // 이메일 중복 체크를 위한 URL
-						type : "POST",
-						data : {
-							email : email
-						},
-						contentType : "application/x-www-form-urlencoded; charset=UTF-8", // 이 부분 추가
-						success : function(response) {
-							if (response == "exists") {
-								alert("이미 존재하는 아이디입니다.");
-								$("input[name='email']").val(''); //아이디칸 비움
-							} else {
-								alert("사용 가능한 아이디입니다.");
-							}
-						},
-						error : function(xhr, status, error) {
-							console.log("AJAX error: " + status + ", " + error); // 에러 확인
-							alert("아이디 중복 체크 실패");
-						}
-					});
-		} else {
-			alert("아이디를 입력해주세요.");
-		}
-	}
-
-	// 전화번호 하이픈 자동 포맷 함수
-	function formatPhoneNumber(input) {
-		let phoneNumber = input.value.replace(/[^\d]/g, ''); // 숫자만 남기고 나머지 문자 제거
-
-		// 전화번호 길이에 따라 하이픈 추가
-		if (phoneNumber.length < 4) {
-			input.value = phoneNumber;
-		} else if (phoneNumber.length < 7) {
-			input.value = phoneNumber.slice(0, 3) + '-' + phoneNumber.slice(3);
-		} else if (phoneNumber.length < 11) {
-			input.value = phoneNumber.slice(0, 3) + '-'
-					+ phoneNumber.slice(3, 6) + '-' + phoneNumber.slice(6);
-		} else {
-			input.value = phoneNumber.slice(0, 3) + '-'
-					+ phoneNumber.slice(3, 7) + '-' + phoneNumber.slice(7, 11);
-		}
-	}
-</script>

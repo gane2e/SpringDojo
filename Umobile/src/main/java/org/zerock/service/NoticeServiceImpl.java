@@ -57,4 +57,15 @@ public class NoticeServiceImpl implements NoticeService {
     public List<NoticeVO> getRecentNotices(int limit) {
         return mapper.fetchRecentNotices(limit);
     }
+    
+    @Override
+    public int countAllPosts() {
+        return mapper.countAllPosts();
+    }
+
+    
+	@Override
+	public int countSearchPosts(String keyword) {
+		return mapper.countSearchPosts(keyword);
+	}
 }

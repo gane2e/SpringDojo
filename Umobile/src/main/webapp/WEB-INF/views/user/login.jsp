@@ -10,7 +10,7 @@
 <link href="${path}/resources/csss/subindex.css" rel="stylesheet" />
 </head>
 <body>
-	
+
 	<!-- 로그인 작업완료 -->
 	<%@ include file="../includes/header.jsp"%>
 
@@ -47,10 +47,8 @@
 			</div>
 		</div>
 	</div>
-	<%-- <%@ include file="../includes/mainfooter.jsp"%> --%>
 	<%@ include file="../includes/subfooter.jsp"%>
 
-	<!-- 서버에서 전달된 메시지 표시 -->
 	<c:if test="${not empty loginMessage}">
 		<script>
 			alert('${loginMessage}');

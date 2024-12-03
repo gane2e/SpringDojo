@@ -1,6 +1,9 @@
 package org.zerock.domain;
 
-import java.time.LocalDateTime;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
@@ -10,9 +13,10 @@ public class NoticeVO {
     private String title;
     private String content;
     private String writer;
-    private LocalDateTime createdDate;
-    private LocalDateTime modifiedDate;
-    private LocalDateTime regdate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date createdDate;
+    private Date modifiedDate;
+    private Date regdate;
     private String regdateString;
 
 }

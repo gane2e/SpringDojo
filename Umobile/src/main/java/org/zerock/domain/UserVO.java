@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class UserVO {
-	
+
 	private long uno;
 	private String email;
 	private String name;
@@ -17,4 +17,5 @@ public class UserVO {
 	private Date regdate;
 	private String role;
 	
+
 }

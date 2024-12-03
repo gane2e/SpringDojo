@@ -21,7 +21,7 @@
     <!--  슬라이더 시작  -->
     
     <div class="slider-container">
-        <div class="slider">ㅋ
+        <div class="slider">
             <div class="slide">
                 <img src="resources/img/slider.png" alt="슬라이드 1">
             </div>
@@ -419,28 +419,6 @@
   </div>
 </div>
 
-<div class="subsBannerArea2">
-  <div class="bottom-slider">
-      <!-- 하단 슬라이드-->
-    <div class="subscription-box bottom-slider-box"> 
-      <div class="MAIN"><a href="#"><img src="resources/img/king.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king1.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king2.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king3.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king4.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king5.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king6.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king1.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king2.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king3.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king4.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king5.png"></a></div>
-      <div class="MAIN"><a href="#"><img src="resources/img/king6.png"></a></div>
-      
-       </div>
-      </div>
-    </div>
   </div>
 </div>
   

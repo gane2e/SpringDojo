@@ -38,11 +38,4 @@
 		<appender-ref ref="console" />
 	</root>
 	
-    <!-- 서비스 로거 설정 -->
-    <logger name="com.example.service" additivity="false">
-        <level value="DEBUG" />
-        <appender-ref ref="Console" />
-        <appender-ref ref="File" />
-    </logger>
-	
 </log4j:configuration>

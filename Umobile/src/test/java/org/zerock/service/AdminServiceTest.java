@@ -29,5 +29,5 @@ public class AdminServiceTest {
         // 로그인 성공시, 반환된 AdminVO가 null이 아니어야 함
         log.info(result);
 	}
-
+	
 }

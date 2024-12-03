@@ -17,7 +17,7 @@ public interface NoticeMapper {
 
 	// 공지사항 삭제
 	void delete(Long nno);
-	
+
 	List<NoticeVO> fetchRecentNotices(@Param("limit") int limit);
 
 	// 모든 공지사항 가져오기
@@ -25,9 +25,14 @@ public interface NoticeMapper {
 
 	// 공지사항 목록 (페이징 처리)
 	List<NoticeVO> getAllWithPaging(@Param("offset") int offset, @Param("limit") int limit);
-	
+
 	// 검색 기능 추가
-    List<NoticeVO> searchPosts(@Param("keyword") String keyword, @Param("offset") int offset, @Param("limit") int limit);
+	List<NoticeVO> searchPosts(@Param("keyword") String keyword, @Param("offset") int offset,
+			@Param("limit") int limit);
+
+	int countSearchPosts(String keyword);
+
+	int countAllPosts();
 
 	int getTotalCount();
 
